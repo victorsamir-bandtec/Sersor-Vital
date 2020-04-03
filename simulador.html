@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+Quantidade de casos de infecção: <input id="casos_h"><br>
+<button onclick="calcular()">Calcular</button><br>
+<div id="R"></div>
+    </body>
+</html>
+<script>
+function calcular() {
+    var A1 = Number(casos_h.value);
+    var A2 = (A1/100) * 10;
+    var A3 = (A2/100) * 75;
+
+R.innerHTML = A3
+}
+</script>
