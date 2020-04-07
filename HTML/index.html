@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
-  <title>Wildbeast</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://fonts.googleapis.com/css?family=Vollkorn:400,400i,700" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/mobile.css">
+  <title>Sensor Vital</title>
 </head>
 
 <body>
@@ -13,7 +15,7 @@
   <div class="estrutura">
 
     <header class="header">
-      <a href="#" class="logo">Sensor Vital</a>
+      <a href="#" class="logo">Sensor Vital<span>Seu medicamento na temperatura ideal</span></a>
       <nav class="menu">
         <ul>
           <li><a href="#Home">Home</a></li>
@@ -24,33 +26,10 @@
       </nav>
     </header>
 
-    <nav class="sidenav">
-      <ul>
-        <li><a href="#"><img src="img/icones/svg/032-first-aid-kit.svg"></a></li>
-        <li><a href="#"><img src="img/icones/svg/039-medicine-1.svg"></a></li>
-        <li><a href="#"><img src="img/icones/svg/007-vaccine.svg"></a></li>
-        <li><a href="#"><img src="img/icones/svg/038-band-aid.svg"></a></li>
-        <li><a href="#"><img src="img/icones/svg/031-cream.svg"></a></li>
-        <li><a href="#"><img src="img/icones/svg/037-medicine-2.svg"></a></li>
-      </ul>
-    </nav>
-
     <main class="content">
       <div class="titulo">
-        <h1>Sensor Vital</h1>
-        <span>Seus medicamentos na temperatura ideal</span>
+        <h1>O projeto</h1>
       </div>
-
-      <!-- <div class="caracteristicas">
-        <div>
-          <span class="numero">72</span>
-          <span class="rotulo">kg</span>
-        </div>
-        <div>
-          <span class="numero">13</span>
-          <span class="rotulo">age</span>
-        </div>
-      </div> -->
 
       <p class="col-wide">Lorem ipsum dolor sit amet,
         consectetur adipiscing elit. Nulla tincidunt sapien erat,
@@ -67,8 +46,7 @@
       </p>
 
       <img class="imagem-2"
-        src="https://img.freepik.com/vetores-gratis/projeto-do-fundo-da-farmacia_1212-351.jpg?size=338&ext=jpg"
-        alt="Wolf 2">
+        src="https://img.freepik.com/vetores-gratis/projeto-do-fundo-da-farmacia_1212-351.jpg?size=338&ext=jpg">
 
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tincidunt sapien erat,
         sit amet ullamcorper
@@ -121,6 +99,16 @@
       <div class="anuncio-item">
         <img src="https://cdn.romanews.com.br/img/pc/780/530/dn_noticia/2020/02/coronavirus.jpg" alt="Anuncio 2">
       </div>
+
+      <div class="anuncio-item">
+        <img
+          src="https://imagens.ebc.com.br/RugItqyJYv_K_EGb677jkCiO30o=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/coronavirus_3001209365_0.jpg?itok=p3vYBkTC"
+          alt="Anuncio 1">
+      </div>
+
+      <div class="anuncio-item">
+        <img src="https://cdn.romanews.com.br/img/pc/780/530/dn_noticia/2020/02/coronavirus.jpg" alt="Anuncio 2">
+      </div>
     </aside>
 
 
@@ -133,15 +121,4 @@
 
 </html>
 
-<script>
-  function simulador() {
-    var sald = Number(saldo.value);
-    var sala = Number(salas.value);
-
-    var resul = sala * 2;
-    var re = sald * 12;
-
-    economia.innerHTML = `R$ ${resul.toFixed(2)}`;
-    anual.innerHTML = `R$ ${re.toFixed(2)}`;
-  }
-</script>
+<script src="/HTML/script.js"></script>
