@@ -1,10 +1,11 @@
 
 // Simulador de regra de negocio
-function simulador() {
-  var casos_infecção = Number(casos_infecção.value);
+function simu() {
+  var numero_casos = Number(infectados.value);
 
-  var resul = (casos_infecção * 10);
+  var economia_mensal = (numero_casos * 0.10) * 0.75;
+  var economia_anual = economia_mensal * 12;
 
-  economia.innerHTML = `R$ ${resul.toFixed(2)}`;
-  anual.innerHTML = `R$ ${re.toFixed(2)}`;
+  economia.innerHTML = `R$ ${economia_mensal.toFixed(2)}`;
+  anual.innerHTML = `R$ ${economia_anual.toFixed(2)}`;
 }

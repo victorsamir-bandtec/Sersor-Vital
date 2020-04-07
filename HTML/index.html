@@ -19,7 +19,7 @@
       <nav class="menu">
         <ul>
           <li><a href="#Home">Home</a></li>
-          <li><a href="#Serviços">Serviços</a></li>
+          <li><a href="#serviços">Serviços</a></li>
           <li><a href="#Sobre">Sobre nós</a></li>
           <li><a href="#">Login</a></li>
         </ul>
@@ -58,24 +58,26 @@
         velit molestie quis. Fusce id justo tellus.
       </p>
 
+    </main>
 
-      <blockquote class="citacao col-wide">
+    <div id="serviços" class="tela-toda">
+      <blockquote id="simulador">
         <p>“Nós cuidados dos equipamentos e vocês salvam vidas.”</p>
       </blockquote>
 
       <ul class="atributos">
         <li>Orçamento</li>
         <li>Investimento: <b>R$ 5000,00</b></li>
-        <li>Valor economizado:<b id="economia"></b></li>
-        <li>Economia anual:<b id="anual"></b></li>
+        <li>Valor economizado: <b id="economia"></b></li>
+        <li>Economia anual: <b id="anual"></b></li>
       </ul>
 
-      <div class="informacoes">
-        <h3>Informe:</h3>
-        <input id="saldo" type="number" placeholder="saldo">
-        <input id="salas" type="number" placeholder="salas">
-        <button onclick="simulador()">calcular</button>
+      <div class="calculo">
+        <h2>Informe</h2>
+        <p>Numero de casos de infecção</p>
+        <input id="infectados" type="number" placeholder="digite aqui">
 
+        <button onclick="simu()">Simular</button>
         <p>Sua economia será garantida</p>
       </div>
 
@@ -83,7 +85,9 @@
         src="https://static.vecteezy.com/system/resources/previews/000/570/740/non_2x/medical-concept-with-doctor-and-patients-in-flat-cartoon-on-hospital-hall-vector.jpg"
         alt="Wolf 3">
 
-    </main>
+    </div>
+
+
 
     <aside class="anuncios">
       <div class="anuncio-item">
@@ -121,4 +125,5 @@
 
 </html>
 
-<script src="/HTML/script.js"></script>
+<!-- SCRIPTS -->
+<script src="/script.js"></script>
