@@ -1,0 +1,12 @@
+REUNIÃO 02/04/2020 21:30 as 22:30
+PRESENÇA: Raphael, Victor, Marcelo, Natã, Felipe, João
+FALTAS: 
+FEITOS: LLD E HLD
+DISCUTIDO: DATAS DE ENTREGA, LLD E HLD, FUNÇÕES E DESENVOLVIMENTO, Simulador Financeiro
+DECIDIDO: SCRUM MASTER SEMANAL (JOÃO), o que fazer.
+
+REUNIÃO 06/04/2020 21:00
+Presença: Felipe, João, Marcelo, Victor, Raphael.
+Faltas: Natã
+Discutido: Ata, horários, plano de ação, data de entrega, comunicação em relação ao projeto e regras.
+Decidido: Sprint 1 entregável até quarta 8/04/20.
