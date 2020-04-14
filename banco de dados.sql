@@ -20,7 +20,12 @@ foreign key (sensores) references Sensores(idSensor)
 );
 create table Sensores(
 idSensor int primary key,
-temperatura int,
-umidade int,
 lugar varchar(30)
+);
+create table Registro(
+idRegistro int primary key auto_increment,
+Temperatura float,
+umidade float,
+fkSensor int,
+foreign key (fkSensor) references sensores(idSensor)
 );
