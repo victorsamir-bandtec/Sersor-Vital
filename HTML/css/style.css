@@ -64,7 +64,7 @@ img {
 .logo span {
   position: absolute;
   bottom:-12px;
-  left: 0;
+  left:4px;
   
   font-size: .75rem;
   letter-spacing: 2px; 
@@ -213,11 +213,11 @@ p {
 .atributos li + li {
   border-top: 2px solid rgba(255, 255, 255, 0.507);
 }
-.atributos li #economia{
+/* .atributos li #economia{
   display: block;
  
   line-height: 3px;
-}
+} */
 
 /* Calculo */
 .calculo {
@@ -286,8 +286,6 @@ p {
   background: white;
   color: black;
 }
-
-
 
 /*ANUNCIOS*/
 .anuncios {
