@@ -1,22 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/login.css">
   <link rel="stylesheet" href="script.js">
 </head>
-<body class="loginb">
-  <section class="loginbox">
-    <form class="box" action="index.html">
-      <h1>Login</h1>
-      <p>Usúario</p>
-      <input type="text" placeholder="Usúario">
-      <p>Senha</p>
-      <input type="password" placeholder="Senha">
-      <input type="submit" value="Entrar"> 
-    </form>
-  </section>
+
+<body>
+  <div class="login">
+
+    <div class="texto">
+      <h1>Sensor <b>Vital</b></h1>
+      <p>Faça seu login, para desfrutar dos beneficios.</p>
+    </div>
+
+
+    <section class="loginbox">
+
+      <img src="/img/icones/svg/doctor.svg" alt="">
+
+      <form class="box" action="index.html">
+        <p>Usúario</p>
+        <input type="email" placeholder="Email" required>
+        <p>Senha</p>
+        <input type="password" placeholder="password" required>
+
+        <input type="submit" value="cadastrar">
+        <input type="submit" value="entrar">
+      </form>
+
+    </section>
+  </div>
 </body>
 </html>

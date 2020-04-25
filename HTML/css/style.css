@@ -13,6 +13,7 @@ body {
   font-family: 'Poppins', sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
 }
 li {
   list-style: none;
@@ -301,79 +302,13 @@ p {
 }
 
 /*FOOTER*/
-.footer {
+footer {
   grid-area: footer;
   background: linear-gradient(135deg, #683030, rgb(221, 37, 67));
 
 }
-.footer p {
+footer p {
   color: white;
   text-align: center;
   padding: 30px;
-}
-
-.loginb{
-  margin: 0;
-  padding: 0;
-  background: url(/img/loginhp.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.loginbox{
-  width: 400px;
-  height: 420px;
-  background: rgba(0, 0, 0, .8);
-  color: #fff;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, 50%);
-  box-sizing: border-box;
-  padding: 70px 30px;
-}
-
-h1{
-  margin: 0;
-  padding: 0 0 20px;
-  text-align: center;
-  font-size: 22px;
-}
-
-.loginbox p{
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-  color: white;
-}
-
-.loginbox input{
-  width: 100%;
-  margin-bottom: 30px;
-}
-
-.loginbox input[type="text"], input[type="password"]{
-  border: none;
-  border-bottom: 1px solid #fff;
-  background: transparent;
-  outline: none;
-  height: 40px;
-  color: #fff;
-  font-size: 16px;
-}
-
-.loginbox input[type="submit"]{
-  border: none;
-  outline: none;
-  height: 40px;
-  background: #fb2525;
-  color: #fff;
-  font-size: 18px;
-  border-radius: 20px;
-  margin-top: 10px;
-}
-
-.loginbox input[type="submit"]:hover {
-  cursor: pointer;
-  background: #1dfb00;
-  color: #000;
 }
