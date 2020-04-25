@@ -10,10 +10,4 @@ function simu() {
   anual.innerHTML = `<b>${economia_anual.toFixed(0)}</b> pacientes`;
 }
 
-function toggle() {
 
-  var blur = document.getElementById("tudo");
-  blur.classList.toggle('active');
-  var popup = document.getElementById("entrar");
-  popup.classList.toggle('active');
-}
