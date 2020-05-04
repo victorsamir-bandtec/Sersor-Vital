@@ -156,7 +156,7 @@
 
 			chart.data.labels.push(this.time++);
 			chart.data.datasets[0].data.push(parseFloat(data));
-			// chart.update();
+			chart.update();
 		});
 
 	}
@@ -164,23 +164,25 @@
 	get_data();
 
 	setInterval(() => {
-		var agora = new Date();
-		var hora = agora.getHours();
-		var minuto = agora.getMinutes();
-		var segundo = agora.getSeconds();
-		var momento = `${hora > 9 ? '' : '0'}${hora}:${minuto > 9 ? '' : '0'}${minuto}:${segundo > 9 ? '' : '0'}${segundo}`;
+		// var agora = new Date();
+		// var hora = agora.getHours();
+		// var minuto = agora.getMinutes();
+		// var segundo = agora.getSeconds();
+		// var momento = `${hora > 9 ? '' : '0'}${hora}:${minuto > 9 ? '' : '0'}${minuto}:${segundo > 9 ? '' : '0'}${segundo}`;
 
-		var novoRegistro = {
-			momento: momento,
-			leitura: get_data(),
-		};
+		// var novoRegistro = {
+		// 	momento: momento,
+		// 	leitura: get_data(),
+		// };
 
-		chart.data.labels.shift(); // apagar o primeiro
-		chart.data.labels.push(novoRegistro.momento); // incluir um novo momento
-		chart.data.datasets[0].data.shift();  // apagar o primeiro
-		chart.data.datasets[0].data.push(novoRegistro.leitura); // incluir uma nova leitura
+		// chart.data.labels.shift(); // apagar o primeiro
+		// chart.data.labels.push(novoRegistro.momento); // incluir um novo momento
+		// chart.data.datasets[0].data.shift();  // apagar o primeiro
+		// chart.data.datasets[0].data.push(novoRegistro.leitura); // incluir uma nova leitura
 
-		chart.update();
+		// chart.update();
+
+		get_data();
 
 	}, 5000);
 
