@@ -6,8 +6,8 @@ function simu() {
   var economia_mensal = (numero_casos * 0.10) * 0.75;
   var economia_anual = economia_mensal * 12;
 
-  economia.innerHTML = `<b>${economia_mensal.toFixed(0)}</b> pacientes por mês`;
-  anual.innerHTML = `<b>${economia_anual.toFixed(0)}</b> pacientes`;
+  economia.innerHTML = `<b>${economia_mensal.toFixed(0)}</b> casos`;
+  anual.innerHTML = `<b>${economia_anual.toFixed(0)}</b> casos`;
 }
 
 
