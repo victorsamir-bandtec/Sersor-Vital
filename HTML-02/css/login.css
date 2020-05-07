@@ -136,3 +136,10 @@
   background: #fff;
   color: #ff0000;
 }
+
+.cadastrobox .box p {
+  margin: 0;
+}
+.cadastrobox .box input:last-of-type {
+  margin: 10px 30%;
+}

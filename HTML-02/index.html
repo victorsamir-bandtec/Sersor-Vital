@@ -121,7 +121,7 @@
 			animation: {
 				onProgress: null,
 				easing: 'linear',
-				duration: 10
+				duration: 50
 			}
 		}
 	};
@@ -132,6 +132,12 @@
 	this.time = 0;
 
 	function get_data() {
+
+		var agora = new Date();
+		var hora = agora.getHours();
+		var minuto = agora.getMinutes();
+		var segundo = agora.getSeconds();
+		var momento = `${hora > 9 ? '' : '0'}${hora}:${minuto > 9 ? '' : '0'}${minuto}:${segundo > 9 ? '' : '0'}${segundo}`;
 
 		var http = new XMLHttpRequest();
 		http.open('GET', 'http://localhost:3000/api', false);
@@ -154,7 +160,7 @@
 				chart.data.datasets[0].data.shift();
 			}
 
-			chart.data.labels.push(this.time++);
+			chart.data.labels.push(momento);
 			chart.data.datasets[0].data.push(parseFloat(data));
 			chart.update();
 		});
@@ -164,25 +170,8 @@
 	get_data();
 
 	setInterval(() => {
-		// var agora = new Date();
-		// var hora = agora.getHours();
-		// var minuto = agora.getMinutes();
-		// var segundo = agora.getSeconds();
-		// var momento = `${hora > 9 ? '' : '0'}${hora}:${minuto > 9 ? '' : '0'}${minuto}:${segundo > 9 ? '' : '0'}${segundo}`;
 
-		// var novoRegistro = {
-		// 	momento: momento,
-		// 	leitura: get_data(),
-		// };
-
-		// chart.data.labels.shift(); // apagar o primeiro
-		// chart.data.labels.push(novoRegistro.momento); // incluir um novo momento
-		// chart.data.datasets[0].data.shift();  // apagar o primeiro
-		// chart.data.datasets[0].data.push(novoRegistro.leitura); // incluir uma nova leitura
-
-		// chart.update();
-
-		// get_data();
+		get_data();
 
 	}, 5000);
 
