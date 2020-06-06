@@ -28,7 +28,7 @@ img {
 }
 
 /* GRID GERAL */
-.estrutura {
+/* .estrutura {
   display: grid;
   grid-template-columns: minmax(500px, 4fr) 1fr;
   grid-template-areas:
@@ -37,7 +37,7 @@ img {
     "tela-toda tela-toda"
     "footer footer"
   ;
-}
+} */
 
 /*HEADER*/
 .header {
@@ -141,13 +141,11 @@ p {
   line-height: 1.6;
   
   color: rgba(0,0,0,.7);
+
+  padding-top: 35px;
 }
 .col-wide {
   grid-column: 1 / -1;
-}
-.imagem-1 {
-  grid-row: span 2;
-  align-self: start;
 }
 .item-2 {
   align-self: end;
@@ -169,6 +167,12 @@ p {
 
   /* background: #000; */
   margin: 10px 30px;
+}
+.chamada{
+  width: 900px;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: 700;
 }
 
 /* SIMULADOR */
@@ -197,6 +201,7 @@ p {
   text-align: center;
 
   color: white;
+  padding: 0;
 }
 
 /* informaçoes de orçamento */
