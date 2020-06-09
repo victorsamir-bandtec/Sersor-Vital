@@ -1,5 +1,6 @@
 const sensors = require('./sensors')
 
+
 class NewArduino {
 
     constructor(){
@@ -18,7 +19,7 @@ class NewArduino {
     
     SetConnection(){
         setInterval(() => {
-            let data_float = sensors.lm35(23,26);
+            let data_float = sensors.lm35();
 
             if (this.__listDataTemp.length === 59) {
                 let sum = this.__listDataTemp.reduce((a, b) =>  a + b, 0);
@@ -31,11 +32,11 @@ class NewArduino {
             this.__listDataTemp.push(data_float);
             this.listData.push(data_float);
 
-        }, 100);
+        }, 3000);
     }
 }
 
 const serial = new NewArduino();
 serial.SetConnection();
 
-module.exports.ArduinoData = {List: serial.List, ListHour:serial.ListHour} 
+module.exports.ArduinoDataTemp = {List: serial.List, ListHour:serial.ListHour} 
