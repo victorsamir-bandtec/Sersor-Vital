@@ -89,10 +89,10 @@ function registrar_leitura(temperatura, umidade) {
     banco.conectar().then(() => {
 
         return banco.sql.query(`
-        INSERT into Registro (temperatura, umidade, momento)
-        values (${temperatura}, ${umidade}, CONVERT(Datetime, '${agora()}', 120));
+        INSERT into Registro (fkSensor, temperatura, umidade, momento)
+        values (1, ${temperatura}, ${umidade}, CONVERT(Datetime, '${agora()}', 120));
         
-        delete from Registro where id not in 
+        delete from Registro where idRegistro not in 
         (select top ${registros_mantidos_tabela_leitura} idRegistro from Registro order by idRegistro desc);`)
         .then(() => {
             console.log('Registro inserido com sucesso!');
@@ -121,7 +121,7 @@ if (gerar_dados_aleatorios) {
 	// dados aleatórios
 	setInterval(function() {
 		console.log('Gerando valores aleatórios!');
-		registrar_leitura(Math.min(Math.random()*100, 60), Math.min(Math.random()*200, 100))
+		registrar_leitura(Math.random()*100, Math.min(Math.random()*100, 60))
 	}, intervalo_geracao_aleatoria_segundos * 1000);
 } else {
 	// iniciando a "escuta" de dispositivos Arduino.
