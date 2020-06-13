@@ -61,9 +61,9 @@ foreign key (fkSensor) references Sensores(idSensor),
 idRegistro int primary key auto_increment,
 Temperatura decimal (3,1), 
 Umidade decimal (3,1),
-Data_registro date,
-Horario time
+momento datetime
 ) auto_increment = 100;
+
 
 drop table registro;
 insert into Registro values 
