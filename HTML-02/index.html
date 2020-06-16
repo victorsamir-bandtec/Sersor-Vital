@@ -1,447 +1,129 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
 
 <head>
-	<title>Line Chart</title>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-	<script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
-	<script src="http://www.chartjs.org/samples/latest/utils.js"></script>
-	<link rel="stylesheet" href="/css/dash.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Vollkorn:400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/mobile.css">
+  <title>Sensor Vital</title>
 </head>
 
 <body>
+  <div class="estrutura">
 
-	<header class="header">
-		<a href="#" class="logo">Sensor Vital<span>Seu medicamento na temperatura ideal</span></a>
-		<nav class="menu">
-			<ul>
+    <header class="header">
+      <a href="#" class="logo">Sensor Vital<span>Seu hospital na temperatura ideal</span></a>
+      <nav class="menu">
+        <ul>
+          <li><a href="#Home">Home</a></li>
+          <li><a href="#simulador">Orçamento</a></li>
+          <li><a href="#Sobre">Sobre nós</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </header>
 
-				<li><a href="#">Configurações</a></li>
-				<li><a href="/suporte.html">Suporte</a></li>
-				<li><a href="/Home.html">Sair</a></li>
-			</ul>
-		</nav>
-	</header>
+    <main class="content">
+      <div class="titulo">
+        <h1>O que é o sensor vital?</h1>
+      </div>
 
+      <p class="col-wide">O sensor vital é um conjunto de pequenos equipamentos e serviços que farão do seu hospital um melhor lugar para seus pacientes.
+      </p>
 
+      <img class="imagem-1"
+        src="https://uploads.metropoles.com/wp-content/uploads/2020/04/22112703/Coronavirus-testes-aguas-claras-7.jpeg">
 
-	<main>
-		<div class="container">
-			<div class="estrutura">
+      <p>Nossos sensores medirão a temperatura e a umidade nos recintos dos seus hospitais e os enviarão para um banco de dados.
+        isso te privará de um serviço de medição manual e potencialmente falho, diminuindo assim o número de infecções hospitalares em seu hospital.
+      </p>
 
+      
 
-				<div>
-					<div>
-						<h2>Temperatura ala UTI</h2>
-						<section style="display: none;">
-							<h2>Média: <label id='average'>0.00</label></h2>
-							<h2>Média Hora: <label id='averageHour'>0.00</label></h2>
-						</section>
-						<section style="width:70%">
-							<canvas id="chart"></canvas>
-							<section>
-					</div>
-					<div>
-						<h2>Umidade ala UTI</h2>
-						<section style="display: none;">
-							<h2>Média: <label id='averageHumidity'>0.00</label></h2>
-							<h2>Média Hora: <label id='averageHourHumidity'>0.00</label></h2>
-						</section>
-						<section style="width:70%;">
-							<canvas id="chart-humidity"></canvas>
-							<section>
-					</div>
-					<div style="display: none;">
-						<section>
-							<h1>Sensor TRC5000 - Switch</h1>
-						</section>
-						<section style="width:50%">
-							<canvas id="chart-switch"></canvas>
-							<section>
-					</div>
-					<div style="display: none;">
-						<section>
-							<h1>Sensor LDR - Luminosidade</h1>
-							<h2>Média: <label id='averageLumi'>0.00</label></h2>
-							<h2>Média Hora: <label id='averageHourLumi'>0.00</label></h2>
-						</section>
-						<section style="width:50%">
-							<canvas id="chart-lumi"></canvas>
-							<section>
-					</div>
-				</div>
+      <p>Disponibilizaremos também um gráfico de informações das temperaturas. sempre que um sensor registrar uma temperatura ou umidade fora do limite indicado para aquele recinto você receberá um alerta indicando isso
+      </p>
+      
+      <img class="imagem-2"
+        src="https://www.diariodepernambuco.com.br/static/app/noticia_127983242361/2020/04/20/826183/20200420105425480112i.jpg">
 
+      
 
-				<aside class="alas">
+    </main>
+    <div class="chamada">
+      <p>Abaixo você pode conferir um simulador que indica a quantidade de infecções hospitalares que podem ser evitadas de acordo com seu investimento no nosso serviço para seu hospital. Não custa nada verificar, não é mesmo?
+      </p>  
+    </div>
+    
 
-					<ul>
-						<li><a href=""> UTI </a></li>
-						<li><a href=""> Sala cirurgica </a></li>
-						<li><a href=""> Consultorio </a></li>
-						<li><a href=""> Hall </a></li>
-					</ul>
+    <div id="simulador" class="tela-toda">
+      <blockquote class="citaçao">
+        <p>“Ajudando vocês a salvar vidas .”</p>
+      </blockquote>
 
-				</aside>
+      <ul class="atributos">
+        <li>Orçamento</li>
+        <li>Investimento: <b>R$ 5.000,00</b></li>
+        <li>Mensalmente serão evitados: <span id="economia"></span></li>
+        <li>Anualmente serão evitados: <span id="anual"></span></li>
+      </ul>
 
-			</div>
-		</div>
+      <div class="calculo">
+        <h2>Informe</h2>
+        <p>Numero de casos de infecção</p>
+        <input id="infectados" type="number" placeholder="digite aqui">
 
+        <button onclick="simu()">Simular</button>
+        <p>Sua economia será garantida</p>
+      </div>
 
-	</main>
+<<<<<<< HEAD
+      <!-- <img class="col-wide"
+        src="https://static.vecteezy.com/system/resources/previews/000/570/740/non_2x/medical-concept-with-doctor-and-patients-in-flat-cartoon-on-hospital-hall-vector.jpg"
+        alt="Wolf 3"> -->
 
-	<footer>
-		<p>Sensor Vital © 2012 - 2020. Alguns direitos reservados.</p>
-	</footer>
+    </div>
+
+    <!-- <aside class="anuncios">
+      <div class="anuncio-item">
+        <img src="https://ichef.bbci.co.uk/images/ic/720x405/p081qmq7.jpg" alt="Anuncio 1">
+      </div>
+
+      <div class="anuncio-item">
+        <img
+          src="https://imagens.ebc.com.br/RugItqyJYv_K_EGb677jkCiO30o=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/coronavirus_3001209365_0.jpg?itok=p3vYBkTC"
+          alt="Anuncio 1">
+      </div>
+
+      <div class="anuncio-item">
+        <img src="https://cdn.romanews.com.br/img/pc/780/530/dn_noticia/2020/02/coronavirus.jpg" alt="Anuncio 2">
+      </div>
+
+      <div class="anuncio-item">
+        <img
+          src="https://imagens.ebc.com.br/RugItqyJYv_K_EGb677jkCiO30o=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/coronavirus_3001209365_0.jpg?itok=p3vYBkTC"
+          alt="Anuncio 1">
+      </div>
+
+      <div class="anuncio-item">
+        <img src="https://cdn.romanews.com.br/img/pc/780/530/dn_noticia/2020/02/coronavirus.jpg" alt="Anuncio 2">
+      </div>
+    </aside> -->
+=======
+    </div>
+
+>>>>>>> c8ed17b274b3de2c549489e9b4068f176b27e732
+
+    <footer>
+      <p>Sensor Vital © 2012 - 2020. Alguns direitos reservados.</p>
+    </footer>
+
+  </div>
 
 </body>
 
 </html>
 
-
-<script>
-	var context = document.getElementById("chart").getContext("2d");
-	context.canvas.width = 10000;
-	context.canvas.height = 3000;
-
-	var configuration = {
-		type: 'line',
-		data: {
-			datasets: [{
-				label: "Temperature x Time",
-				type: 'line',
-				borderColor: ['#ff3232'],
-				backgroundColor: ['#ff7f7f']
-			}]
-		},
-		options: {
-			scales: {
-				xAxes: [{
-					//type: 'value',
-					distribution: 'series',
-					ticks: {
-						beginAtZero: true
-					}
-				}],
-				yAxes: [{
-					scaleLabel: {
-						display: true,
-						labelString: 'Temperature'
-					},
-					ticks: {
-						beginAtZero: true
-					}
-				}]
-			},
-			animation: {
-				duration: 0
-			}
-		}
-	};
-
-	var chart = new Chart(context, configuration);
-
-	//Função para obter os dados de temperatura do server
-
-	//Esse atributo dentro do contexto serve para saber qual foi o último índice processado, assim eliminado os outros elementos na
-	//hora de montar/atualizar o gráfico
-	this.lastIndexTemp = 0;
-	this.time = 0;
-
-	function get_data() {
-
-		var http = new XMLHttpRequest();
-		http.open('GET', 'http://localhost:3000/api', false);
-		http.send(null);
-
-		var obj = JSON.parse(http.responseText);
-		if (obj.data.length == 0) {
-			return;
-		}
-
-		var _lastIndexTemp = this.lastIndexTemp;
-		this.lastIndexTemp = obj.data.length;
-		listTemp = obj.data.slice(_lastIndexTemp);
-
-		listTemp.forEach(data => {
-			//Máximo de 60 itens exibidos no gráfico
-			if (chart.data.labels.length == 10 && chart.data.datasets[0].data.length == 10) {
-				chart.data.labels.shift();
-				chart.data.datasets[0].data.shift();
-			}
-			chart.data.labels.push(this.time++);
-			chart.data.datasets[0].data.push(parseFloat(data));
-			chart.update();
-		});
-
-		document.getElementById('average').textContent = obj.average;
-		document.getElementById('averageHour').textContent = obj.averageHour;
-	}
-
-	//Second Graphic
-
-	var context2 = document.getElementById("chart-humidity").getContext("2d");
-	context2.canvas.width = 1000;
-	context2.canvas.height = 300;
-
-	var humidity = {
-		type: 'line',
-		data: {
-			datasets: [{
-				label: "Humidity x Time",
-				type: 'line',
-				borderColor: ['#3232ff'],
-				backgroundColor: ['#9999ff']
-			}]
-		},
-		options: {
-			scales: {
-				xAxes: [{
-					//type: 'value',
-					distribution: 'series',
-					ticks: {
-						beginAtZero: true
-					}
-				}],
-				yAxes: [{
-					scaleLabel: {
-						display: true,
-						labelString: 'Humidity'
-					},
-					ticks: {
-						beginAtZero: true
-					}
-				}]
-			},
-			animation: {
-				duration: 0
-			}
-		}
-	};
-
-	var chartHumidity = new Chart(context2, humidity);
-
-	//Função para obter os dados de temperatura do server
-
-
-	//Esse atributo dentro do contexto serve para saber qual foi o último índice processado, assim eliminado os outros elementos na
-	//hora de montar/atualizar o gráfico
-	this.lastIndexTempHumidity = 0;
-	this.timeHumidity = 0;
-
-	function get_dataHumidity() {
-
-		var http = new XMLHttpRequest();
-		http.open('GET', 'http://localhost:3000/api/humidity', false);
-		http.send(null);
-
-		var obj = JSON.parse(http.responseText);
-		if (obj.data.length == 0) {
-			return;
-		}
-
-		var _lastIndexTemp = this.lastIndexTempHumidity;
-		this.lastIndexTempHumidity = obj.data.length;
-		listTemp = obj.data.slice(_lastIndexTemp);
-
-		listTemp.forEach(data => {
-			//Máximo de 60 itens exibidos no gráfico
-			if (chartHumidity.data.labels.length == 10 && chartHumidity.data.datasets[0].data.length == 10) {
-				chartHumidity.data.labels.shift();
-				chartHumidity.data.datasets[0].data.shift();
-			}
-
-			chartHumidity.data.labels.push(this.time++);
-			chartHumidity.data.datasets[0].data.push(parseFloat(data));
-			chartHumidity.update();
-		});
-
-		document.getElementById('averageHumidity').textContent = obj.average;
-		document.getElementById('averageHourHumidity').textContent = obj.averageHour;
-	}
-
-	get_dataHumidity();
-
-	//Thirty Graphic
-
-	var context3 = document.getElementById("chart-switch").getContext("2d");
-	context3.canvas.width = 1000;
-	context3.canvas.height = 300;
-
-	var switch_sensor = {
-		type: 'line',
-		data: {
-			datasets: [{
-				label: "Switch x Time",
-				type: 'line',
-				borderColor: ['#ae3f3f'],
-				backgroundColor: ['#c97f7f']
-			}]
-		},
-		options: {
-			scales: {
-				xAxes: [{
-					//type: 'value',
-					distribution: 'series',
-					ticks: {
-						beginAtZero: true
-					}
-				}],
-				yAxes: [{
-					scaleLabel: {
-						display: true,
-						labelString: 'Switch'
-					},
-					ticks: {
-						beginAtZero: true
-					}
-				}]
-			},
-			animation: {
-				duration: 0
-			}
-		}
-	};
-
-	var chartSwitch = new Chart(context3, switch_sensor);
-
-	//Função para obter os dados de temperatura do server
-
-	//Esse atributo dentro do contexto serve para saber qual foi o último índice processado, assim eliminado os outros elementos na
-	//hora de montar/atualizar o gráfico
-	this.lastIndexTempHumidity = 0;
-	this.timeSwitch = 0;
-
-	function get_switch() {
-
-		var http = new XMLHttpRequest();
-		http.open('GET', 'http://localhost:3000/api/switch', false);
-		http.send(null);
-
-		var obj = JSON.parse(http.responseText);
-		if (obj.data.length == 0) {
-			return;
-		}
-
-		var _lastIndexTemp = this.lastIndexTempSwitch;
-		this.lastIndexTempSwitch = obj.data.length;
-		listTemp = obj.data.slice(_lastIndexTemp);
-
-		listTemp.forEach(data => {
-			//Máximo de 60 itens exibidos no gráfico
-			if (chartSwitch.data.labels.length == 10 && chartSwitch.data.datasets[0].data.length == 10) {
-				chartSwitch.data.labels.shift();
-				chartSwitch.data.datasets[0].data.shift();
-			}
-
-			chartSwitch.data.labels.push(this.time++);
-			chartSwitch.data.datasets[0].data.push(parseFloat(data));
-			chartSwitch.update();
-		});
-
-	}
-
-	get_switch();
-
-	//Fourty Graphic
-
-	var context4 = document.getElementById("chart-lumi").getContext("2d");
-	context4.canvas.width = 1000;
-	context4.canvas.height = 300;
-
-	var lumi_sensor = {
-		type: 'line',
-		data: {
-			datasets: [{
-				label: "Luminosity x Time",
-				type: 'line',
-				borderColor: ['#ffff19'],
-				backgroundColor: ['#ffff7f']
-			}]
-		},
-		options: {
-			scales: {
-				xAxes: [{
-					//type: 'value',
-					distribution: 'series',
-					ticks: {
-						beginAtZero: true
-					}
-				}],
-				yAxes: [{
-					scaleLabel: {
-						display: true,
-						labelString: 'Luminosity'
-					},
-					ticks: {
-						beginAtZero: true
-					}
-				}]
-			},
-			animation: {
-				duration: 0
-			}
-		}
-	};
-
-	var chartLumi = new Chart(context4, lumi_sensor);
-
-	//Função para obter os dados de temperatura do server
-
-	//Esse atributo dentro do contexto serve para saber qual foi o último índice processado, assim eliminado os outros elementos na
-	//hora de montar/atualizar o gráfico
-	this.lastIndexLumi = 0;
-	this.timeLumi = 0;
-
-	function get_lumi() {
-
-		var http = new XMLHttpRequest();
-		http.open('GET', 'http://localhost:3000/api/luminosity', false);
-		http.send(null);
-
-		var obj = JSON.parse(http.responseText);
-		if (obj.data.length == 0) {
-			return;
-		}
-
-		var _lastIndexTemp = this.lastIndexLumi;
-		this.lastIndexLumi = obj.data.length;
-		listTemp = obj.data.slice(_lastIndexTemp);
-
-		listTemp.forEach(data => {
-			//Máximo de 60 itens exibidos no gráfico
-			if (chartLumi.data.labels.length == 10 && chartLumi.data.datasets[0].data.length == 10) {
-				chartLumi.data.labels.shift();
-				chartLumi.data.datasets[0].data.shift();
-			}
-
-			chartLumi.data.labels.push(this.time++);
-			chartLumi.data.datasets[0].data.push(parseFloat(data));
-			chartLumi.update();
-		});
-
-		document.getElementById('averageLumi').textContent = obj.average;
-		document.getElementById('averageHourLumi').textContent = obj.averageHour;
-
-	}
-
-	get_lumi();
-
-	function sendTemperature() {
-		var http = new XMLHttpRequest();
-		http.open('POST', 'http://localhost:3000/api/sendData', false);
-		http.send(null);
-	}
-
-
-
-
-	setInterval(() => {
-		get_data();
-		get_dataHumidity();
-		get_switch();
-		get_lumi();
-		sendTemperature();
-	}, 3000);
-
-
-</script>
+<!-- SCRIPTS -->
+<script src="/js/script.js"></script>

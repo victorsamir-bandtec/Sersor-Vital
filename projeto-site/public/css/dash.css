@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+/* geral */
+* {
+  padding: 0px;
+  margin : 0px;
+  outline: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family           : 'Poppins', sans-serif;
+  text-rendering        : optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  box-sizing            : border-box;
+  overflow-x            : hidden;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color          : white;
+  text-decoration: none;
+}
+
+img {
+  display      : block;
+  width        : 100%;
+  border-radius: 5px;
+}
+
+canvas {
+  -moz-user-select   : none;
+  -webkit-user-select: none;
+  -ms-user-select    : none;
+}
+
+/* Container */
+.container {
+  width: 95%;
+
+  margin: 50px auto;
+}
+
+
+/*HEADER*/
+.header {
+  display              : grid;
+  grid-template-columns: 1fr auto;
+
+  padding      : 30px;
+  align-items  : center;
+  border-bottom: 5px solid black;
+
+  background: linear-gradient(135deg, #683030, rgb(221, 37, 67));
+}
+
+/* Logo */
+.logo {
+  position: relative;
+
+  font-weight: bold;
+  font-size  : 2.5em;
+
+  letter-spacing: 10px;
+  color         : white;
+}
+
+.logo span {
+  position: absolute;
+  bottom  : -12px;
+  left    : 4px;
+
+  font-size     : .75rem;
+  letter-spacing: 2px;
+}
+
+/* Nav */
+.menu ul {
+  display  : flex;
+  flex-wrap: wrap;
+}
+
+.menu a {
+  display: block;
+
+  padding      : 10px;
+  border-radius: 3px;
+
+  font-size : 1.2em;
+  transition: .2s;
+
+  color     : white;
+  background: rgba(0, 0, 0, 0.219);
+}
+
+.menu a:hover {
+  color     : black;
+  background: white;
+}
+
+.menu li+li {
+  margin-left: 30px;
+}
+
+
+
+/* Estrutura */
+.estrutura {
+  width : 100%;
+  height: 100%;
+
+
+
+  display              : grid;
+  grid-template-columns: minmax(500px, 4fr) 1fr;
+  grid-template-areas  : 'grafico alas';
+}
+
+/* Grafico */
+#grafico {
+  display  : grid;
+  grid-area: grafico;
+
+
+  /* background: #000; */
+
+
+}
+
+
+/* Alas */
+.alas {
+  display    : grid;
+  align-items: center;
+  grid-area  : alas;
+
+  margin-left: 10px;
+  background : linear-gradient(135deg, #683030, rgb(221, 37, 67));
+}
+
+.alas ul li {
+  height: 50px;
+
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+
+  padding      : 10px;
+  border-radius: 5px;
+
+  text-align: center;
+  font-size : 1.7rem;
+  cursor    : pointer;
+
+  transition: ease-in-out 0.2s;
+}
+
+.alas ul li+li {
+  margin-top: 15px;
+}
+
+.alas ul li:hover {
+  transform: scale(1.05);
+
+  background: rgb(221, 37, 67);
+}
+
+/* Suporte */
+.campo {
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  justify-content: center;
+
+}
+
+.campo h1 {
+  font-size: 2.7rem;
+  margin   : 30px 0;
+  color    : #d74042;
+}
+
+.campo img {
+  width: 300px;
+
+  position: absolute;
+  right   : 50px;
+}
+
+
+iframe {
+  width : 40%;
+  height: 90vh;
+
+
+  overflow     : auto;
+  border       : 0;
+  border-radius: 5px;
+
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.109);
+
+}
+
+
+
+
+
+
+
+
+
+/*FOOTER*/
+footer {
+  background: linear-gradient(135deg, #683030, rgb(221, 37, 67));
+}
+
+footer p {
+  color     : white;
+  text-align: center;
+  padding   : 30px;
+}

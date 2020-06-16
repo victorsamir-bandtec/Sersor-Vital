@@ -1,12 +1,129 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
 
 <head>
-  <title>Express</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Vollkorn:400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/mobile.css">
+  <title>Sensor Vital</title>
 </head>
 
 <body>
-  HTML funcionando! te juro!
+  <div class="estrutura">
+
+    <header class="header">
+      <a href="#" class="logo">Sensor Vital<span>Seu hospital na temperatura ideal</span></a>
+      <nav class="menu">
+        <ul>
+          <li><a href="#Home">Home</a></li>
+          <li><a href="#simulador">Orçamento</a></li>
+          <li><a href="#Sobre">Sobre nós</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="content">
+      <div class="titulo">
+        <h1>O que é o sensor vital?</h1>
+      </div>
+
+      <p class="col-wide">O sensor vital é um conjunto de pequenos equipamentos e serviços que farão do seu hospital um melhor lugar para seus pacientes.
+      </p>
+
+      <img class="imagem-1"
+        src="https://uploads.metropoles.com/wp-content/uploads/2020/04/22112703/Coronavirus-testes-aguas-claras-7.jpeg">
+
+      <p>Nossos sensores medirão a temperatura e a umidade nos recintos dos seus hospitais e os enviarão para um banco de dados.
+        isso te privará de um serviço de medição manual e potencialmente falho, diminuindo assim o número de infecções hospitalares em seu hospital.
+      </p>
+
+      
+
+      <p>Disponibilizaremos também um gráfico de informações das temperaturas. sempre que um sensor registrar uma temperatura ou umidade fora do limite indicado para aquele recinto você receberá um alerta indicando isso
+      </p>
+      
+      <img class="imagem-2"
+        src="https://www.diariodepernambuco.com.br/static/app/noticia_127983242361/2020/04/20/826183/20200420105425480112i.jpg">
+
+      
+
+    </main>
+    <div class="chamada">
+      <p>Abaixo você pode conferir um simulador que indica a quantidade de infecções hospitalares que podem ser evitadas de acordo com seu investimento no nosso serviço para seu hospital. Não custa nada verificar, não é mesmo?
+      </p>  
+    </div>
+    
+
+    <div id="simulador" class="tela-toda">
+      <blockquote class="citaçao">
+        <p>“Ajudando vocês a salvar vidas .”</p>
+      </blockquote>
+
+      <ul class="atributos">
+        <li>Orçamento</li>
+        <li>Investimento: <b>R$ 5.000,00</b></li>
+        <li>Mensalmente serão evitados: <span id="economia"></span></li>
+        <li>Anualmente serão evitados: <span id="anual"></span></li>
+      </ul>
+
+      <div class="calculo">
+        <h2>Informe</h2>
+        <p>Numero de casos de infecção</p>
+        <input id="infectados" type="number" placeholder="digite aqui">
+
+        <button onclick="simu()">Simular</button>
+        <p>Sua economia será garantida</p>
+      </div>
+
+<<<<<<< HEAD
+      <!-- <img class="col-wide"
+        src="https://static.vecteezy.com/system/resources/previews/000/570/740/non_2x/medical-concept-with-doctor-and-patients-in-flat-cartoon-on-hospital-hall-vector.jpg"
+        alt="Wolf 3"> -->
+
+    </div>
+
+    <!-- <aside class="anuncios">
+      <div class="anuncio-item">
+        <img src="https://ichef.bbci.co.uk/images/ic/720x405/p081qmq7.jpg" alt="Anuncio 1">
+      </div>
+
+      <div class="anuncio-item">
+        <img
+          src="https://imagens.ebc.com.br/RugItqyJYv_K_EGb677jkCiO30o=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/coronavirus_3001209365_0.jpg?itok=p3vYBkTC"
+          alt="Anuncio 1">
+      </div>
+
+      <div class="anuncio-item">
+        <img src="https://cdn.romanews.com.br/img/pc/780/530/dn_noticia/2020/02/coronavirus.jpg" alt="Anuncio 2">
+      </div>
+
+      <div class="anuncio-item">
+        <img
+          src="https://imagens.ebc.com.br/RugItqyJYv_K_EGb677jkCiO30o=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/coronavirus_3001209365_0.jpg?itok=p3vYBkTC"
+          alt="Anuncio 1">
+      </div>
+
+      <div class="anuncio-item">
+        <img src="https://cdn.romanews.com.br/img/pc/780/530/dn_noticia/2020/02/coronavirus.jpg" alt="Anuncio 2">
+      </div>
+    </aside> -->
+=======
+    </div>
+
+>>>>>>> c8ed17b274b3de2c549489e9b4068f176b27e732
+
+    <footer>
+      <p>Sensor Vital © 2012 - 2020. Alguns direitos reservados.</p>
+    </footer>
+
+  </div>
+
 </body>
 
 </html>
+
+<!-- SCRIPTS -->
+<script src="/js/script.js"></script>

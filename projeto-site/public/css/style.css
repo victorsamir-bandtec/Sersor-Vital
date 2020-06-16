@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+/* geral */
+* {
+  padding: 0px;
+  margin: 0px;
+  outline: 0;
+}
+html{
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* GRID GERAL */
+/* .estrutura {
+  display: grid;
+  grid-template-columns: minmax(500px, 4fr) 1fr;
+  grid-template-areas:
+    " header header"
+    "content anuncios"
+    "tela-toda tela-toda"
+    "footer footer"
+  ;
+} */
+
+/*HEADER*/
+.header {
+  display: grid;
+  grid-area: header;
+  grid-template-columns: 1fr auto;
+  
+  padding: 30px;
+  align-items: center;
+  border-bottom: 5px solid black;  
+
+  background: linear-gradient(135deg, #683030, rgb(221, 37, 67));
+}
+
+/* Logo */
+.logo {
+  position: relative;
+
+  font-weight: bold;
+  font-size: 2.5em;
+
+  letter-spacing: 10px;
+  color: white;
+}
+.logo span {
+  position: absolute;
+  bottom:-12px;
+  left:4px;
+  
+  font-size: .75rem;
+  letter-spacing: 2px; 
+}
+
+/* Nav */
+.menu ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.menu a {
+  display: block;
+  
+  padding: 10px;
+  border-radius: 3px;
+  
+  font-size: 1.2em;
+  transition: .2s;
+
+  color: white;
+  background: rgba(0, 0, 0, 0.219);
+}
+.menu a:hover {
+  color: black;
+  background: white;
+}
+.menu li + li {
+  margin-left: 30px;
+}
+
+/*CONTENT*/
+.content {
+  display: grid;
+  
+  grid-area: content;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+
+  max-width: 900px;
+
+  margin: 0 auto;
+  padding: 30px;
+}
+
+/* texto, e imagens */
+.titulo {
+  grid-column: 1/3;
+
+  color: rgb(221, 37, 67);
+}
+.titulo h1 {
+  font-size: 3.75em;
+  font-weight: 700;
+
+  text-align: center;
+  line-height: 1;
+}
+.titulo h1::after { 
+  display: block;
+  
+  content: '';
+ 
+  width: 300px;
+  height: 2px;
+
+  margin: 10px auto;
+
+  background: rgba(0, 0, 0, 0.808);
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  
+  color: rgba(0,0,0,.7);
+
+  padding-top: 35px;
+}
+.col-wide {
+  grid-column: 1 / -1;
+}
+.item-2 {
+  align-self: end;
+}
+.destaque {
+  max-width: 16em;
+  
+  font-size: 0.875em;
+  
+  color: rgb(255, 91, 91);
+}
+
+.tela-toda {
+  display: grid;
+  grid-area: tela-toda;
+  grid-template-columns: 1fr 1fr;
+
+  padding: 10px 30px;
+
+  /* background: #000; */
+  margin: 10px 30px;
+}
+.chamada{
+  width: 900px;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: 700;
+}
+
+/* SIMULADOR */
+.citaçao, .atributos {
+  align-self: start;
+
+  padding: 30px;
+  margin: 10px 0;
+
+  border-radius: 4px;
+
+  background: rgb(221, 37, 68);
+  /* background: linear-gradient(135deg, #683030, rgb(221, 37, 67)); */
+}
+
+.citaçao {
+ grid-column: 1/3;
+}
+.citaçao p {
+  max-width:1000px;
+
+  margin: 0 auto;
+  
+  font-size: 2em;
+  font-style: italic;
+  text-align: center;
+
+  color: white;
+  padding: 0;
+}
+
+/* informaçoes de orçamento */
+.atributos {
+  height: 400px;
+}
+.atributos li {
+  font-size: 1.5em;
+  padding: 15px;
+
+  line-height: 60px;
+
+  color: white;
+}
+.atributos li + li {
+  border-top: 2px solid rgba(255, 255, 255, 0.507);
+}
+/* .atributos li #economia{
+  display: block;
+ 
+  line-height: 3px;
+} */
+
+/* Calculo */
+.calculo {
+  display: flex;
+  flex-direction: column;
+
+  padding: 30px;
+  margin: 10px 0 10px 10px;
+
+  align-items: center;
+
+  border-radius: 4px;
+}
+.calculo h2 {
+  margin-bottom: 50px;
+
+  font-size: 2.5rem;
+  text-align: center;
+
+  letter-spacing: 5px;
+}
+.calculo h2::after{
+  content: '';
+  display: block;
+
+  width: 200px;
+  height: 2px;
+  
+  background: #000;
+}
+
+.calculo input {
+  width: 250px;
+  height: 25px;
+
+  margin: 15px 5px;
+  padding: 10px;
+  
+  text-align: center;
+  font-size: 1.4rem;
+
+  border: 2px solid black;
+  border-radius: 3px;
+  
+}
+.calculo button {
+  width: 150px;
+  height: 50px;
+  
+  padding: 10px 30px;
+  margin-bottom: 20px;
+
+  border: 1px solid black;
+  border-radius: 3px;
+
+  font-size: 1.3rem;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: all .15s ease-in-out;
+
+  color: white;
+  background:rgba(0, 0, 0, 0.877);
+}
+.calculo button:hover {
+  background: white;
+  color: black;
+}
+
+/*ANUNCIOS*/
+.anuncios {
+  display: grid;
+
+  grid-area: anuncios;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 50px;
+
+  padding: 15px;
+  
+  align-content: start;
+}
+
+/*FOOTER*/
+footer {
+  grid-area: footer;
+  background: linear-gradient(135deg, #683030, rgb(221, 37, 67));
+
+}
+footer p {
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
