@@ -114,9 +114,10 @@
 
   background: rgb(58, 58, 58);
 }
-.box input[type="submit"], input[type="button"]{
+.box #btn_entrar, input[type="button"]{
   width: 40%;
-  margin: 21px;
+  height: 15%;
+  margin: 40px 21px 21px 21px;
 
   float: left;
 
@@ -131,11 +132,13 @@
   color: #fff;
   background: #fb2525;
 }
-.box input[type="submit"]:hover, input[type="button"]:hover{
+.box #btn_entrar:hover, input[type="button"]:hover{
   box-shadow: 0 0 10px black;
   background: #fff;
   color: #ff0000;
 }
+
+
 
 .cadastrobox .box p {
   margin: 0;
