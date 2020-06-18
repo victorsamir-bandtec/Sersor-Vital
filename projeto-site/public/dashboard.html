@@ -59,6 +59,8 @@
 
 
 	</main>
+	<div id="temperatura"></div>
+	<div id="umidade"></div>
 
 	<footer>
 		<p>Sensor Vital © 2012 - 2020. Alguns direitos reservados.</p>
@@ -118,6 +120,8 @@
 									dados.datasets[0].data.push(novoRegistro.temperatura); // incluir uma nova leitura de temperatura
 									dados.datasets[1].data.push(novoRegistro.umidade); // incluir uma nova leitura de umidade
 									window.grafico_linha.update();
+									temperatura.innerHTML = novoRegistro.temperatura;
+									umidade.innerHTML = novoRegistro.umidade;
 									
 									setTimeout(atualizarGrafico, 5000);
 							});
