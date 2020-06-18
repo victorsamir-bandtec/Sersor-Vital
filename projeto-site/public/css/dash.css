@@ -123,13 +123,8 @@ canvas {
 }
 
 /* Grafico */
-#grafico {
-  display  : grid;
-  grid-area: grafico;
-
-
-  /* background: #000; */
-
+.grafico {
+  height: 68vh;
 
 }
 
@@ -204,15 +199,7 @@ iframe {
   border-radius: 5px;
 
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.109);
-
 }
-
-
-
-
-
-
-
 
 
 /*FOOTER*/
