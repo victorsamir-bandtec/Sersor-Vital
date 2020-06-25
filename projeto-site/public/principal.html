@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/principal.css">
+  <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+	<script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script>
+	<script type="text/javascript" src="funcoes.js"></script>
   <title>Dash</title>
 </head>
 
@@ -41,8 +44,8 @@
           <div class="face face2">
             <h2>UTI</h2>
             <p>
-              temperatura: 55c
-              Umidade: 55c
+				temperatura: <span id="temperatura1"></span>
+				Umidade: <span id="umidade1"></span>
             </p>
           </div>
         </div>
@@ -63,8 +66,8 @@
           <div class="face face2">
             <h2>Sala cirurgica</h2>
             <p>
-              temperatura: 55c
-              Umidade: 55c
+				temperatura: <span id="temperatura2"></span>
+				Umidade: <span id="umidade2"></span>
             </p>
           </div>
         </div>
@@ -84,8 +87,8 @@
           <div class="face face2">
             <h2>Hall</h2>
             <p>
-              temperatura: 55c
-              Umidade: 55c
+				temperatura: <span id="temperatura3"></span>
+				Umidade: <span id="umidade3"></span>
             </p>
           </div>
         </div>
@@ -114,6 +117,20 @@
     </section>
 	</main>
 	
+	<div style="display: none;">
+		<div class="grafico">
+			<div style="display: none;">
+				Olá, <b id="b_usuario"></b>
+				<a href="#" onclick="logoff()" style="color:maroon">[Sair]</a>
+
+				<!-- <a href="tempo-real.html">Tempo Real</a> -->
+		</div>
+		<div style="width:75%;">
+				<div id="div_aguarde">Dados sendo obtidos...</div>
+				<canvas id="canvas_grafico"></canvas>
+		</div>
+		</div>
+	</div>
 
   <footer>
     <p>Sensor Vital © 2012 - 2020. Alguns direitos reservados.</p>
@@ -174,6 +191,12 @@
 									window.grafico_linha.update();
 									temperatura.innerHTML = novoRegistro.temperatura;
 									umidade.innerHTML = novoRegistro.umidade;
+									temperatura1.innerHTML = novoRegistro.temperatura;
+									umidade1.innerHTML = novoRegistro.umidade;
+									temperatura2.innerHTML = novoRegistro.temperatura;
+									umidade2.innerHTML = novoRegistro.umidade;
+									temperatura3.innerHTML = novoRegistro.temperatura;
+									umidade3.innerHTML = novoRegistro.umidade;
 									
 									setTimeout(atualizarGrafico, 5000);
 							});
