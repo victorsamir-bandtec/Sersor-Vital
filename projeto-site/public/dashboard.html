@@ -23,7 +23,16 @@
 		</nav>
 	</header>
 
-
+	<div class="notification" id="notification">
+		<div class="notification-item">
+		  <div class="notification-icon">
+		  </div>
+		  <div>
+			<h3>Esssa não!</h3>
+			<h5>Aqui você coloca uma noticia ruim</h5>
+		  </div>
+		</div>
+	  </div>
 
 	<main>
 		<div class="container">
@@ -127,6 +136,14 @@
 									window.grafico_linha.update();
 									temperatura.innerHTML = novoRegistro.temperatura;
 									umidade.innerHTML = novoRegistro.umidade;
+
+									if (novoRegistro.temperatura > 27){
+										notification.style.display = "block"
+									}
+									else
+									{
+										notification.style.display = "none"
+									}
 									
 									setTimeout(atualizarGrafico, 5000);
 							});
