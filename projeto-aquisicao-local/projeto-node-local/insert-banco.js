@@ -8,7 +8,7 @@
 
 // se usar 'true' aqui, os dados serão gerados aleatórios e não recebidos da placa arduíno
 const gerar_dados_aleatorios = true; 
-const intervalo_geracao_aleatoria_segundos = 5; // intervalo, em segundos, no qual os dados aleatórios serão gerados
+const intervalo_geracao_aleatoria_segundos = 15; // intervalo, em segundos, no qual os dados aleatórios serão gerados
 
 // leitura dos dados do Arduino
 const porta_serial = require('serialport');
@@ -81,19 +81,22 @@ function iniciar_escuta() {
 // função que recebe valores de temperatura e umidade
 // e faz um insert no banco de dados
 function registrar_leitura(temperatura, umidade) {
-
+    let sorteio = parseInt(Math.random() *4)+1;
+    
+    
     console.log('\nIniciando inclusão de novo registro...');
     console.log(`temperatura: ${temperatura}`);
     console.log(`umidade: ${umidade}`);
+    console.log(`fksensor: ${sorteio}`);
 
     banco.conectar().then(() => {
+        
 
         return banco.sql.query(`
         INSERT into Registro (fkSensor, temperatura, umidade, momento)
-        values (1, ${temperatura}, ${umidade}, CONVERT(Datetime, '${agora()}', 120));
+        values (${sorteio}, ${temperatura}, ${umidade}, CONVERT(Datetime, '${agora()}', 120));
         
-        delete from Registro where idRegistro not in 
-        (select top ${registros_mantidos_tabela_leitura} idRegistro from Registro order by idRegistro desc);`)
+       `)
         .then(() => {
             console.log('Registro inserido com sucesso!');
         });
@@ -128,6 +131,7 @@ if (gerar_dados_aleatorios) {
 	console.log('Iniciando obtenção de valores do Arduino!');
 	iniciar_escuta();
 }
+
 
 /*
  abrir a pasta deste arquivo via git bash e executar:
