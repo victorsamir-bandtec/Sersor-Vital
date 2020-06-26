@@ -129,13 +129,37 @@ canvas {
 }
 
 .temporeal{
-  width: 240px;
+  display: flex;
+  width: 550px;
   text-transform: uppercase;
-  margin-left: 1150px;
-  margin-top: -600px;
   font-weight: bold;
   font-size: 26px;
+  justify-content: space-between;
 }
+
+.temporeal img{
+  width: 60px;
+}
+
+
+.temperatura{
+  height: 100px;
+  min-width: 240px;
+  background: #cf0000;
+  justify-content: center;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.umidade{
+  display: inline-block;
+  height: 100px;
+  min-width: 240px;
+  background: #049db5;
+  justify-content: center;
+  border-radius: 5px;
+}
+
 
 /* Alas */
 .alas {
