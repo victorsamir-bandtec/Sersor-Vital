@@ -15,7 +15,7 @@
 		<a href="/principal.html" class="logo">Sensor Vital<span>Seu medicamento na temperatura ideal</span></a>
 		<nav class="menu">
 			<ul>
-
+				<li><a href="/principal.html">Home</a></li>
 				<li><a href="#">Configurações</a></li>
 				<li><a href="/suporte.html">Suporte</a></li>
 				<li><a href="/index.html">Sair</a></li>
@@ -25,14 +25,14 @@
 
 	<div class="notification" id="notification">
 		<div class="notification-item">
-		  <div class="notification-icon">
-		  </div>
-		  <div>
-			<h3>Esssa não!</h3>
-			<h5>Aqui você coloca uma noticia ruim</h5>
-		  </div>
+			<div class="notification-icon">
+			</div>
+			<div>
+				<h3>Esssa não!</h3>
+				<h5>Aqui você coloca uma noticia ruim</h5>
+			</div>
 		</div>
-	  </div>
+	</div>
 
 	<main>
 		<div class="container">
@@ -42,21 +42,22 @@
 					<div style="display: none;">
 						Olá, <b id="b_usuario"></b>
 						<a href="#" onclick="logoff()" style="color:maroon">[Sair]</a>
-		
+
 						<!-- <a href="tempo-real.html">Tempo Real</a> -->
-				</div>
-				<div style="width:75%;">
+					</div>
+					<div style="width:75%;">
 						<div id="div_aguarde">Dados sendo obtidos...</div>
 						<canvas id="canvas_grafico"></canvas>
-				</div>
+					</div>
 				</div>
 
 				<div class="temporeal">
-				<div class="temperatura">Temperatura: <span id="temperatura"></span> <img src="img/termometro.png" alt=""> </div>
-				
-				<div class="umidade">Umidade: <span id="umidade"></span> <img src="img/umidade.png"alt=""> </div>
+					<div class="temperatura">Temperatura: <span id="temperatura"></span> <img src="img/termometro.png"
+							alt=""> </div>
+
+					<div class="umidade">Umidade: <span id="umidade"></span> <img src="img/umidade.png" alt=""> </div>
 				</div>
-			
+
 
 
 				<aside class="alas">
@@ -75,7 +76,7 @@
 
 
 	</main>
-	
+
 
 	<footer>
 		<p>Sensor Vital © 2012 - 2020. Alguns direitos reservados.</p>
@@ -95,25 +96,25 @@
 	// neste JSON tem que ser 'labels', 'datasets' etc, 
 	// porque é o padrão do Chart.js
 	var dados = {
-			labels: [],
-			datasets: [
-					{
-							yAxisID: 'y-temperatura',
-							label: 'Temperatura',
-							borderColor: '#cf0000',
-							backgroundColor: '#cf0000',
-							fill: false,
-							data: []
-					},
-					{
-							yAxisID: 'y-umidade',
-							label: 'Umidade',
-							borderColor: '#049db5',
-							backgroundColor: '#049db5',
-							fill: false,
-							data: []
-					}
-			]
+		labels: [],
+		datasets: [
+			{
+				yAxisID: 'y-temperatura',
+				label: 'Temperatura',
+				borderColor: '#cf0000',
+				backgroundColor: '#cf0000',
+				fill: false,
+				data: []
+			},
+			{
+				yAxisID: 'y-umidade',
+				label: 'Umidade',
+				borderColor: '#049db5',
+				backgroundColor: '#049db5',
+				fill: false,
+				data: []
+			}
+		]
 	};
 
 
@@ -121,131 +122,130 @@
 	// ou se souber o que está fazendo!
 	function atualizarGrafico() {
 
-			fetch('/leituras/tempo-real/1', { cache: 'no-store' }).then(function (response) {
-					if (response.ok) {
-							response.json().then(function (novoRegistro) {
+		fetch('/leituras/tempo-real/1', { cache: 'no-store' }).then(function (response) {
+			if (response.ok) {
+				response.json().then(function (novoRegistro) {
 
-									console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
-									
-									// tirando e colocando valores no gráfico
-									dados.labels.shift(); // apagar o primeiro
-									dados.labels.push(novoRegistro.momento_grafico); // incluir um novo momento
-									dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
-									dados.datasets[1].data.shift();  // apagar o primeiro de umidade
-									dados.datasets[0].data.push(novoRegistro.temperatura); // incluir uma nova leitura de temperatura
-									dados.datasets[1].data.push(novoRegistro.umidade); // incluir uma nova leitura de umidade
-									window.grafico_linha.update();
-									temperatura.innerHTML = novoRegistro.temperatura;
-									umidade.innerHTML = novoRegistro.umidade;
+					console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+
+					// tirando e colocando valores no gráfico
+					dados.labels.shift(); // apagar o primeiro
+					dados.labels.push(novoRegistro.momento_grafico); // incluir um novo momento
+					dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
+					dados.datasets[1].data.shift();  // apagar o primeiro de umidade
+					dados.datasets[0].data.push(novoRegistro.temperatura); // incluir uma nova leitura de temperatura
+					dados.datasets[1].data.push(novoRegistro.umidade); // incluir uma nova leitura de umidade
+					window.grafico_linha.update();
+					temperatura.innerHTML = novoRegistro.temperatura;
+					umidade.innerHTML = novoRegistro.umidade;
 
 
-									if (novoRegistro.temperatura > 27){
-										notification.style.display = "block"
-									}
-									else
-									{
-										notification.style.display = "none"
-									}
-									
-									setTimeout(atualizarGrafico, 5000);
-							});
-					} else {
-							console.error('Nenhum dado encontrado ou erro na API');
-							setTimeout(atualizarGrafico, 5000);
+					if (novoRegistro.temperatura > 27) {
+						notification.style.display = "block"
 					}
-			})
+					else {
+						notification.style.display = "none"
+					}
+
+					setTimeout(atualizarGrafico, 5000);
+				});
+			} else {
+				console.error('Nenhum dado encontrado ou erro na API');
+				setTimeout(atualizarGrafico, 5000);
+			}
+		})
 			.catch(function (error) {
-					console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+				console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
 			});
-			
+
 	}
 
 	// altere aqui as configurações do gráfico
 	// (tamanhos, cores, textos, etc)
 	function configurarGrafico() {
-			var configuracoes = {
-					responsive: true,
-					animation: {duration: 500},
-					hoverMode: 'index',
-					stacked: false,
-					title: {
-							display: true,
-							text: 'Gráfico de temperatura e umidade'
+		var configuracoes = {
+			responsive: true,
+			animation: { duration: 500 },
+			hoverMode: 'index',
+			stacked: false,
+			title: {
+				display: true,
+				text: 'Gráfico de temperatura e umidade'
+			},
+			scales: {
+				yAxes: [{
+					type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+					display: true,
+					position: 'left',
+					id: 'y-temperatura',
+				}, {
+					type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+					display: true,
+					position: 'right',
+					id: 'y-umidade',
+
+					// grid line settings
+					gridLines: {
+						drawOnChartArea: false, // only want the grid lines for one axis to show up
 					},
-					scales: {
-							yAxes: [{
-									type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-									display: true,
-									position: 'left',
-									id: 'y-temperatura',
-							}, {
-									type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-									display: true,
-									position: 'right',
-									id: 'y-umidade',
+				}],
+			}
+		};
 
-									// grid line settings
-									gridLines: {
-											drawOnChartArea: false, // only want the grid lines for one axis to show up
-									},
-							}],
-					}
-			};
-
-			return configuracoes;
+		return configuracoes;
 	}
 
 	// altere aqui como os dados serão exibidos
 	// e como são recuperados do BackEnd
 	function obterDadosGrafico() {
 
-			fetch('/leituras/ultimas/1', { cache: 'no-store' }).then(function (response) {
-					if (response.ok) {
-							response.json().then(function (resposta) {
+		fetch('/leituras/ultimas/1', { cache: 'no-store' }).then(function (response) {
+			if (response.ok) {
+				response.json().then(function (resposta) {
 
-									console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+					console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
-									resposta.reverse();
+					resposta.reverse();
 
-									for (i = 0; i < resposta.length; i++) {
-											var registro = resposta[i];
-									
-											// aqui, após 'registro.' use os nomes 
-											// dos atributos que vem no JSON 
-											// que gerou na consulta ao banco de dados
+					for (i = 0; i < resposta.length; i++) {
+						var registro = resposta[i];
 
-											dados.labels.push(registro.momento_grafico);
+						// aqui, após 'registro.' use os nomes 
+						// dos atributos que vem no JSON 
+						// que gerou na consulta ao banco de dados
 
-											dados.datasets[0].data.push(registro.temperatura);
-											dados.datasets[1].data.push(registro.umidade);
-									}
-									console.log(JSON.stringify(dados));
+						dados.labels.push(registro.momento_grafico);
 
-									div_aguarde.style.display = 'none';
-
-									plotarGrafico(dados);
-							});
-					} else {
-							console.error('Nenhum dado encontrado ou erro na API');
+						dados.datasets[0].data.push(registro.temperatura);
+						dados.datasets[1].data.push(registro.umidade);
 					}
-			})
+					console.log(JSON.stringify(dados));
+
+					div_aguarde.style.display = 'none';
+
+					plotarGrafico(dados);
+				});
+			} else {
+				console.error('Nenhum dado encontrado ou erro na API');
+			}
+		})
 			.catch(function (error) {
-					console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+				console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
 			});
 
 	}
 
 	// só altere aqui se souber o que está fazendo!
 	function plotarGrafico(dados) {
-			console.log('iniciando plotagem do gráfico...');
+		console.log('iniciando plotagem do gráfico...');
 
-			var ctx = canvas_grafico.getContext('2d');
-			window.grafico_linha = Chart.Line(ctx, {
-					data: dados,
-					options: configurarGrafico()
-			});
+		var ctx = canvas_grafico.getContext('2d');
+		window.grafico_linha = Chart.Line(ctx, {
+			data: dados,
+			options: configurarGrafico()
+		});
 
-			setTimeout(atualizarGrafico, 5000);
+		setTimeout(atualizarGrafico, 5000);
 	}
 
 </script>

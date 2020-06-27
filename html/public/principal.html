@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/principal.css">
   <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
-	<script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script>
-	<script type="text/javascript" src="funcoes.js"></script>
+  <script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script>
+  <script type="text/javascript" src="funcoes.js"></script>
   <title>Dash</title>
 </head>
 
@@ -15,6 +15,7 @@
     <a href="#" class="logo">Sensor Vital<span>Seu medicamento na temperatura ideal</span></a>
     <nav class="menu">
       <ul>
+        <li><a href="/principal.html">Home</a></li>
         <li><a href="#">Configurações</a></li>
         <li><a href="/suporte.html">Suporte</a></li>
         <li><a href="/index.html">Sair</a></li>
@@ -33,9 +34,10 @@
           <div class="face face1">
             <div class="content">
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                doloribus, consequatur omnis
-                magnam ducimus repudiandae
+                Índice de temperatura ideal entre 20ºC e 23ºC.
+                Umidade relativa do ar não inferior a 40%.
+                Sendo assim, permanecendo em torno de 40-60% ou 60-80%.
+
               </p>
 
               <a class="btn" href="dashboard.html">Ver Grafico</a>
@@ -44,8 +46,8 @@
           <div class="face face2">
             <h2>UTI</h2>
             <p>
-				Temperatura: <span id="temperatura1"></span>
-				Umidade: <span id="umidade1"></span>
+              Temperatura: <span id="temperatura1"></span>
+              Umidade: <span id="umidade1"></span>
             </p>
           </div>
         </div>
@@ -54,9 +56,9 @@
           <div class="face face1">
             <div class="content">
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                doloribus, consequatur omnis
-                magnam ducimus repudiandae
+                Recomenda que a temperatura nas Salas de Operações na unidade de Centro Cirúrgico
+                seja mantida entre 20°C e 23°C,
+                e a umidade do ar ambiente, entre 30 e 60%.
               </p>
 
               <a class="btn" href="dash2.html">Ver Grafico</a>
@@ -65,8 +67,8 @@
           <div class="face face2">
             <h2>Sala cirurgica</h2>
             <p>
-				Temperatura: <span id="temperatura2"></span>
-				Umidade: <span id="umidade2"></span>
+              Temperatura: <span id="temperatura2"></span>
+              Umidade: <span id="umidade2"></span>
             </p>
           </div>
         </div>
@@ -75,9 +77,9 @@
           <div class="face face1">
             <div class="content">
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                doloribus, consequatur omnis
-                magnam ducimus repudiandae
+                A Agência de Vigilância Sanitária, a Anvisa,
+                diz que a temperatura ideal em ambientes fechados é algo entre 23°C e 26°C.
+                Por sua vez, a umidade, deve permanecer acima de 40%.
               </p>
 
               <a class="btn" href="dashboard.html">Ver Grafico</a>
@@ -86,8 +88,8 @@
           <div class="face face2">
             <h2>Hall</h2>
             <p>
-				Temperatura: <span id="temperatura3"></span>
-				Umidade: <span id="umidade3"></span>
+              Temperatura: <span id="temperatura3"></span>
+              Umidade: <span id="umidade3"></span>
             </p>
           </div>
         </div>
@@ -96,9 +98,9 @@
           <div class="face face1">
             <div class="content">
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                doloribus, consequatur omnis
-                magnam ducimus repudiandae
+                Segundo a NR17, do Ministério do Trabalho, a temperatura ideal para consultórios hospitalar
+                deve ficar entre 23°C e 26°C,
+                com umidade relativa inferior a 40%.
               </p>
 
               <a class="btn" href="dashboard.html">Ver Grafico</a>
@@ -114,8 +116,8 @@
         </div>
       </div>
     </section>
-	</main>
-	
+  </main>
+
 
   <footer>
     <p>Sensor Vital © 2012 - 2020. Alguns direitos reservados.</p>
@@ -127,90 +129,87 @@
 
 <script>
 
-function atualizarGrafico() {
+  function atualizarGrafico() {
 
-fetch('/leituras/tempo-real/1', { cache: 'no-store' }).then(function (response) {
-		if (response.ok) {
-				response.json().then(function (novoRegistro) {
-
-
-						temperatura1.innerHTML = novoRegistro.temperatura;
-						umidade1.innerHTML = novoRegistro.umidade;
-
-						
-						setTimeout(atualizarGrafico, 5000);
-				});
-		} else {
-				console.error('Nenhum dado encontrado ou erro na API');
-				setTimeout(atualizarGrafico, 5000);
-		}
-})
-.catch(function (error) {
-		console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-});
-fetch('/leituras/tempo-real/2', { cache: 'no-store' }).then(function (response) {
-		if (response.ok) {
-				response.json().then(function (novoRegistro) {
+    fetch('/leituras/tempo-real/1', { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (novoRegistro) {
 
 
-						temperatura2.innerHTML = novoRegistro.temperatura;
-						umidade2.innerHTML = novoRegistro.umidade;
-
-						
-						setTimeout(atualizarGrafico, 5000);
-				});
-		} else {
-				console.error('Nenhum dado encontrado ou erro na API');
-				setTimeout(atualizarGrafico, 5000);
-		}
-})
-.catch(function (error) {
-		console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-});
-fetch('/leituras/tempo-real/3', { cache: 'no-store' }).then(function (response) {
-		if (response.ok) {
-				response.json().then(function (novoRegistro) {
+          temperatura1.innerHTML = novoRegistro.temperatura;
+          umidade1.innerHTML = novoRegistro.umidade;
 
 
-						temperatura3.innerHTML = novoRegistro.temperatura;
-						umidade3.innerHTML = novoRegistro.umidade;
-
-						
-						setTimeout(atualizarGrafico, 5000);
-				});
-		} else {
-				console.error('Nenhum dado encontrado ou erro na API');
-				setTimeout(atualizarGrafico, 5000);
-		}
-})
-.catch(function (error) {
-		console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-});
-fetch('/leituras/tempo-real/4', { cache: 'no-store' }).then(function (response) {
-		if (response.ok) {
-				response.json().then(function (novoRegistro) {
+          setTimeout(atualizarGrafico, 5000);
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+        setTimeout(atualizarGrafico, 5000);
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+    fetch('/leituras/tempo-real/2', { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (novoRegistro) {
 
 
-						temperatura4.innerHTML = novoRegistro.temperatura;
-						umidade4.innerHTML = novoRegistro.umidade;
+          temperatura2.innerHTML = novoRegistro.temperatura;
+          umidade2.innerHTML = novoRegistro.umidade;
 
-						
-						setTimeout(atualizarGrafico, 5000);
-				});
-		} else {
-				console.error('Nenhum dado encontrado ou erro na API');
-				setTimeout(atualizarGrafico, 5000);
-		}
-})
-.catch(function (error) {
-		console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-});
 
-};
+          setTimeout(atualizarGrafico, 5000);
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+        setTimeout(atualizarGrafico, 5000);
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+    fetch('/leituras/tempo-real/3', { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (novoRegistro) {
+
+
+          temperatura3.innerHTML = novoRegistro.temperatura;
+          umidade3.innerHTML = novoRegistro.umidade;
+
+
+          setTimeout(atualizarGrafico, 5000);
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+        setTimeout(atualizarGrafico, 5000);
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+    fetch('/leituras/tempo-real/4', { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (novoRegistro) {
+
+
+          temperatura4.innerHTML = novoRegistro.temperatura;
+          umidade4.innerHTML = novoRegistro.umidade;
+
+
+          setTimeout(atualizarGrafico, 5000);
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+        setTimeout(atualizarGrafico, 5000);
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+
+  };
 
 
 
 </script>
-
-
-	
