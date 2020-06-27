@@ -246,3 +246,193 @@ footer p {
   text-align: center;
   padding   : 30px;
 }
+/* Notificação */
+
+.notification{
+  width: 480px;
+  right: 0;
+  position: fixed;
+  margin: 10px 20px 20px 20px;
+  display: none;
+}
+
+
+.notification-item{
+ background-color: white;
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  box-shadow: 0px 0px 25px 0px #00000069;
+}
+
+
+
+.notification-item h5,
+.notification-item h3{
+margin: 10px;
+}
+
+.notification-item h3{
+color: #de0000;
+}
+
+.notification-icon{
+padding: 26px;
+background-color: #de0000;
+margin-right: 20px;
+color: white;
+border-radius: 5px 0px 0px 5px;
+}
+
+.notification-icon img{
+  width: 55px;
+}
+
+/* ANIMAÇÃO */
+
+.notification-item:hover{
+transition:0.5s ;
+transform: scale(0.95);
+}
+
+
+/* 2 */
+
+.notification2{
+  width: 480px;
+  right: 0;
+  position: fixed;
+  margin: 130px 20px 20px 20px;
+  display: none;
+}
+
+
+.notification2-item{
+ background-color: white;
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  box-shadow: 0px 0px 25px 0px #00000069;
+}
+
+
+
+.notification2-item h5,
+.notification2-item h3{
+margin: 10px;
+}
+
+.notification2-item h3{
+color: #de0000;
+}
+
+.notification2-icon{
+padding: 26px;
+background-color: #de0000;
+margin-right: 20px;
+color: white;
+border-radius: 5px 0px 0px 5px;
+}
+
+.notification2-icon img{
+  width: 55px;
+}
+
+.notification2-item:hover{
+  transition:0.5s ;
+  transform: scale(0.99);
+  }
+
+/* 3 */
+
+.notification3{
+  width: 480px;
+  right: 0;
+  position: fixed;
+  margin: 250px 20px 20px 20px;
+  display: none;
+}
+
+
+.notification3-item{
+ background-color: white;
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  box-shadow: 0px 0px 25px 0px #00000069;
+}
+
+
+
+.notification3-item h5,
+.notification3-item h3{
+margin: 10px;
+}
+
+.notification3-item h3{
+color: #de0000;
+}
+
+.notification3-icon{
+padding: 26px;
+background-color: #de0000;
+margin-right: 20px;
+color: white;
+border-radius: 5px 0px 0px 5px;
+}
+
+.notification3-icon img{
+  width: 55px;
+}
+
+.notification3-item:hover{
+  transition:0.5s ;
+  transform: scale(0.95);
+  }
+
+/* 4 */
+
+.notification4{
+  width: 480px;
+  right: 0;
+  position: fixed;
+  margin: 370px 20px 20px 20px; 
+  display: none;
+}
+
+
+.notification4-item{
+ background-color: white;
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  box-shadow: 0px 0px 25px 0px #00000069;
+}
+
+
+
+.notification4-item h5,
+.notification4-item h3{
+margin: 10px;
+}
+
+.notification4-item h3{
+color: #de0000;
+}
+
+.notification4-icon{
+padding: 26px;
+background-color: #de0000;
+margin-right: 20px;
+color: white;
+border-radius: 5px 0px 0px 5px;
+}
+
+.notification4-icon img{
+  width: 55px;
+}
+
+.notification4-item:hover{
+  transition:0.5s ;
+  transform: scale(0.95);
+  }

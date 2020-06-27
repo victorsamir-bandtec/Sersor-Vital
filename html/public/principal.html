@@ -23,6 +23,52 @@
     </nav>
   </header>
 
+  <div class="notification" id="notification">
+		<div class="notification-item">
+			<div class="notification-icon"> <img src="img/atencao.png">
+			</div>
+			<div>
+				<h3>ATENÇÃO</h3>
+				<h5 >Algo de errado na temperatura e umidade da UTI</h5>
+			</div>
+		</div>
+  </div>
+  
+  <div class="notification2" id="notification2">
+		<div class="notification2-item">
+			<div class="notification2-icon">  <img src="img/atencao.png">
+			</div>
+			<div>
+				<h3>ATENÇÃO</h3>
+				<h5 id="h5_mensagem">Algo de errado na temperatura e umidade da Sala cirúrgica</h5>
+			</div>
+		</div>
+	</div>
+
+  <div class="notification3" id="notification3">
+		<div class="notification3-item">
+			<div class="notification3-icon"> <img src="img/atencao.png">
+			</div>
+			<div>
+				<h3>ATENÇÃO</h3>
+				<h5 id="h5_mensagem">Algo de errado na temperatura e umidade do Hall</h5>
+			</div>
+		</div>
+  </div>
+  
+  <div class="notification4" id="notification4">
+		<div class="notification4-item">
+			<div class="notification4-icon">  <img src="img/atencao.png">
+			</div>
+			<div>
+				<h3>ATENÇÃO</h3>
+				<h5>Algo de errado na temperatura e umidade do Consultório</h5>
+			</div>
+		</div>
+	</div>
+
+
+
   <main>
 
     <section>
@@ -65,7 +111,7 @@
             </div>
           </div>
           <div class="face face2">
-            <h2>Sala cirurgica</h2>
+            <h2>Sala cirúrgica</h2>
             <p>
               Temperatura: <span id="temperatura2"></span>
               Umidade: <span id="umidade2"></span>
@@ -82,7 +128,7 @@
                 Por sua vez, a umidade, deve permanecer acima de 40%.
               </p>
 
-              <a class="btn" href="dashboard.html">Ver Grafico</a>
+              <a class="btn" href="dash3.html">Ver Grafico</a>
             </div>
           </div>
           <div class="face face2">
@@ -103,11 +149,11 @@
                 com umidade relativa inferior a 40%.
               </p>
 
-              <a class="btn" href="dashboard.html">Ver Grafico</a>
+              <a class="btn" href="dash4.html">Ver Grafico</a>
             </div>
           </div>
           <div class="face face2">
-            <h2>Consultorio</h2>
+            <h2>Consultório</h2>
             <p>
               Temperatura: <span id="temperatura4"></span>
               Umidade: <span id="umidade4"></span>
@@ -130,7 +176,7 @@
 <script>
 
   function atualizarGrafico() {
-
+    h5_mensagem.innerHTML='';
     fetch('/leituras/tempo-real/1', { cache: 'no-store' }).then(function (response) {
       if (response.ok) {
         response.json().then(function (novoRegistro) {
@@ -138,6 +184,13 @@
 
           temperatura1.innerHTML = novoRegistro.temperatura;
           umidade1.innerHTML = novoRegistro.umidade;
+
+          if (novoRegistro.temperatura > 27 || novoRegistro.temperatura < 20 || novoRegistro.umidade < 40 || novoRegistro.umidade > 80) {
+						notification.style.display = "block"
+					}
+					else {
+						notification.style.display = "none"
+					}
 
 
           setTimeout(atualizarGrafico, 5000);
@@ -159,6 +212,15 @@
           umidade2.innerHTML = novoRegistro.umidade;
 
 
+          if (novoRegistro.temperatura > 23 || novoRegistro.temperatura < 20 || novoRegistro.umidade < 30 || novoRegistro.umidade > 60) {
+						notification2.style.display = "block"
+
+					}
+					else {
+						notification2.style.display = "none"
+					}
+
+
           setTimeout(atualizarGrafico, 5000);
         });
       } else {
@@ -176,6 +238,13 @@
 
           temperatura3.innerHTML = novoRegistro.temperatura;
           umidade3.innerHTML = novoRegistro.umidade;
+
+          if (novoRegistro.temperatura > 26 || novoRegistro.temperatura < 23 || novoRegistro.umidade < 40) {
+						notification3.style.display = "block"
+					}
+					else {
+						notification3.style.display = "none"
+					}
 
 
           setTimeout(atualizarGrafico, 5000);
@@ -195,6 +264,14 @@
 
           temperatura4.innerHTML = novoRegistro.temperatura;
           umidade4.innerHTML = novoRegistro.umidade;
+
+          if (novoRegistro.temperatura > 26 || novoRegistro.temperatura < 23 || novoRegistro.umidade > 40) {
+						notification4.style.display = "block"
+            
+					}
+					else {
+						notification4.style.display = "none"
+					}
 
 
           setTimeout(atualizarGrafico, 5000);

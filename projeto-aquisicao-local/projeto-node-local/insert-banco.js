@@ -8,7 +8,7 @@
 
 // se usar 'true' aqui, os dados serão gerados aleatórios e não recebidos da placa arduíno
 const gerar_dados_aleatorios = true; 
-const intervalo_geracao_aleatoria_segundos = 3; // intervalo, em segundos, no qual os dados aleatórios serão gerados
+const intervalo_geracao_aleatoria_segundos = 4; // intervalo, em segundos, no qual os dados aleatórios serão gerados
 
 // leitura dos dados do Arduino
 const porta_serial = require('serialport');
@@ -123,7 +123,7 @@ if (gerar_dados_aleatorios) {
 	// dados aleatórios
 	setInterval(function() {
 		console.log('Gerando valores aleatórios!');
-        registrar_leitura((Math.random() * (30 - 12)) + 12, (Math.random()* (100, 25)) + 25)
+        registrar_leitura((Math.random() * (30 - 17)) + 17, (Math.random()* (100, 29)) + 29)
 	}, intervalo_geracao_aleatoria_segundos * 1000);
 } else {
 	// iniciando a "escuta" de dispositivos Arduino.

@@ -23,17 +23,6 @@
 		</nav>
 	</header>
 
-	<div class="notification" id="notification">
-		<div class="notification-item">
-		  <div class="notification-icon">
-		  </div>
-		  <div>
-			<h3>Esssa não!</h3>
-			<h5>Aqui você coloca uma noticia ruim</h5>
-		  </div>
-		</div>
-	  </div>
-
 	<main>
 		<div class="container">
 			<div class="estrutura">
@@ -63,8 +52,8 @@
 
 					<ul>
 						<li> <a href="dashboard.html"> UTI </a></li>
-						<li> <a href="dash2.html"> Sala cirurgica </a></li>
-						<li> <a href=""> Consultorio </a></li>
+						<li> <a href="dash2.html"> Sala cirúrgica </a></li>
+						<li> <a href=""> Consultório </a></li>
 						<li> <a href="dash4.html"> Hall </a></li>
 					</ul>
 
@@ -138,13 +127,6 @@
 									temperatura.innerHTML = novoRegistro.temperatura;
 									umidade.innerHTML = novoRegistro.umidade;
 
-									if (novoRegistro.temperatura > 27){
-										notification.style.display = "block"
-									}
-									else
-									{
-										notification.style.display = "none"
-									}
 									
 									setTimeout(atualizarGrafico, 5000);
 							});

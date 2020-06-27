@@ -23,16 +23,7 @@
 		</nav>
 	</header>
 
-	<div class="notification" id="notification">
-		<div class="notification-item">
-			<div class="notification-icon">
-			</div>
-			<div>
-				<h3>Esssa não!</h3>
-				<h5>Aqui você coloca uma noticia ruim</h5>
-			</div>
-		</div>
-	</div>
+	
 
 	<main>
 		<div class="container">
@@ -52,10 +43,12 @@
 				</div>
 
 				<div class="temporeal">
-					<div class="temperatura">Temperatura: <span id="temperatura"></span> <img src="img/termometro.png"
-							alt=""> </div>
+					<div class="temperatura">Temperatura: <span id="temperatura"></span> <div> <img src="img/termometro.png"
+						alt=""></div>  </div>
 
-					<div class="umidade">Umidade: <span id="umidade"></span> <img src="img/umidade.png" alt=""> </div>
+					<div class="umidade">Umidade: <span id="umidade"></span>  <div>
+						<img src="img/umidade.png" alt="">
+					</div>  </div>
 				</div>
 
 
@@ -64,8 +57,8 @@
 
 					<ul>
 						<li> <a href=""> UTI </a></li>
-						<li> <a href="dash2.html"> Sala cirurgica </a></li>
-						<li> <a href="dash3.html"> Consultorio </a></li>
+						<li> <a href="dash2.html"> Sala cirúrgica </a></li>
+						<li> <a href="dash3.html"> Consultório </a></li>
 						<li> <a href="dash4.html"> Hall </a></li>
 					</ul>
 
@@ -140,12 +133,7 @@
 					umidade.innerHTML = novoRegistro.umidade;
 
 
-					if (novoRegistro.temperatura > 27) {
-						notification.style.display = "block"
-					}
-					else {
-						notification.style.display = "none"
-					}
+					
 
 					setTimeout(atualizarGrafico, 5000);
 				});
