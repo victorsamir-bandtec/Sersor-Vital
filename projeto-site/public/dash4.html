@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>UTI</title>
+	<title>Sala Cirúrgica</title>
 	<script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
 	<script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script>
 	<script type="text/javascript" src="funcoes.js"></script>
@@ -62,10 +62,10 @@
 				<aside class="alas">
 
 					<ul>
-						<li> <a href=""> UTI </a></li>
+						<li> <a href="dashboard.html"> UTI </a></li>
 						<li> <a href="dash2.html"> Sala cirurgica </a></li>
 						<li> <a href="dash3.html"> Consultorio </a></li>
-						<li> <a href="dash4.html"> Hall </a></li>
+						<li> <a href=""> Hall </a></li>
 					</ul>
 
 				</aside>
@@ -121,7 +121,7 @@
 	// ou se souber o que está fazendo!
 	function atualizarGrafico() {
 
-			fetch('/leituras/tempo-real/1', { cache: 'no-store' }).then(function (response) {
+			fetch('/leituras/tempo-real/4', { cache: 'no-store' }).then(function (response) {
 					if (response.ok) {
 							response.json().then(function (novoRegistro) {
 
@@ -137,7 +137,6 @@
 									window.grafico_linha.update();
 									temperatura.innerHTML = novoRegistro.temperatura;
 									umidade.innerHTML = novoRegistro.umidade;
-
 
 									if (novoRegistro.temperatura > 27){
 										notification.style.display = "block"
@@ -199,7 +198,7 @@
 	// e como são recuperados do BackEnd
 	function obterDadosGrafico() {
 
-			fetch('/leituras/ultimas/1', { cache: 'no-store' }).then(function (response) {
+			fetch('/leituras/ultimas/4', { cache: 'no-store' }).then(function (response) {
 					if (response.ok) {
 							response.json().then(function (resposta) {
 

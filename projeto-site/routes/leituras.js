@@ -4,7 +4,8 @@ var sequelize = require('../models').sequelize;
 var Leitura = require('../models').Leitura;
 
 /* Recuperar as últimas N leituras */
-router.get('/ultimas', function(req, res, next) {
+router.get('/ultimas/:sensor', function(req, res, next) {
+	let sensor = req.params.sensor;
 	
 	// quantas são as últimas leituras que quer? 8 está bom?
 	const limite_linhas = 7;
@@ -16,7 +17,9 @@ router.get('/ultimas', function(req, res, next) {
 						umidade, 
 						momento,
 						FORMAT(momento,'HH:mm:ss') as momento_grafico 
-						from Registro order by idRegistro desc`;
+						from Registro 
+						where fkSensor = ${sensor}
+						order by idRegistro desc`;
 
 	sequelize.query(instrucaoSql, {
 		model: Leitura,
@@ -33,12 +36,13 @@ router.get('/ultimas', function(req, res, next) {
 
 
 // tempo real (último valor de cada leitura)
-router.get('/tempo-real', function (req, res, next) {
+router.get('/tempo-real/:sensor', function (req, res, next) { 
+	let sensor = req.params.sensor;
 	
 	console.log(`Recuperando a última leitura`);
 
 	const instrucaoSql = `select top 1 temperatura, umidade, FORMAT(momento,'HH:mm:ss') as momento_grafico  
-						from Registro order by idRegistro desc`;
+						from Registro where fkSensor = ${sensor} order by idRegistro desc`;
 
 	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.SELECT })
 		.then(resultado => {

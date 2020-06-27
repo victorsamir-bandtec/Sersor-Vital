@@ -8,7 +8,7 @@
 
 // se usar 'true' aqui, os dados serão gerados aleatórios e não recebidos da placa arduíno
 const gerar_dados_aleatorios = true; 
-const intervalo_geracao_aleatoria_segundos = 15; // intervalo, em segundos, no qual os dados aleatórios serão gerados
+const intervalo_geracao_aleatoria_segundos = 3; // intervalo, em segundos, no qual os dados aleatórios serão gerados
 
 // leitura dos dados do Arduino
 const porta_serial = require('serialport');
@@ -16,11 +16,11 @@ const leitura_recebida = porta_serial.parsers.Readline;
 const banco = require(`./banco`);
 
 // prevenir problemas com muitos recebimentos de dados do Arduino
-require('events').EventEmitter.defaultMaxListeners = 15;
+require('events').EventEmitter.defaultMaxListeners = 10;
 
 
 
-const registros_mantidos_tabela_leitura = 8;
+const registros_mantidos_tabela_leitura = 200;
 
 
 function iniciar_escuta() {
@@ -94,8 +94,7 @@ function registrar_leitura(temperatura, umidade) {
 
         return banco.sql.query(`
         INSERT into Registro (fkSensor, temperatura, umidade, momento)
-        values (${sorteio}, ${temperatura}, ${umidade}, CONVERT(Datetime, '${agora()}', 120));
-        
+        values (${sorteio}, ${temperatura}, ${umidade}, CONVERT(Datetime, '${agora()}', 120));        
        `)
         .then(() => {
             console.log('Registro inserido com sucesso!');
@@ -124,7 +123,7 @@ if (gerar_dados_aleatorios) {
 	// dados aleatórios
 	setInterval(function() {
 		console.log('Gerando valores aleatórios!');
-		registrar_leitura(Math.random()*100, Math.min(Math.random()*100, 60))
+        registrar_leitura((Math.random() * (30 - 12)) + 12, (Math.random()* (100, 25)) + 25)
 	}, intervalo_geracao_aleatoria_segundos * 1000);
 } else {
 	// iniciando a "escuta" de dispositivos Arduino.
