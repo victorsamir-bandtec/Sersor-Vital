@@ -24,7 +24,7 @@ li {
 }
 
 a {
-  color          : white;
+  color          : black;
   text-decoration: none;
 }
 
@@ -295,7 +295,7 @@ footer p {
 
 .notification-item:hover {
   transition: 0.5s;
-  transform : scale(0.95);
+  transform : scale(1.05);
 }
 
 
@@ -345,7 +345,7 @@ footer p {
 
 .notification2-item:hover {
   transition: 0.5s;
-  transform : scale(0.99);
+  transform : scale(1.05);
 }
 
 /* 3 */
@@ -394,7 +394,7 @@ footer p {
 
 .notification3-item:hover {
   transition: 0.5s;
-  transform : scale(0.95);
+  transform : scale(1.05);
 }
 
 /* 4 */
@@ -444,5 +444,5 @@ footer p {
 
 .notification4-item:hover {
   transition: 0.5s;
-  transform : scale(0.95);
+  transform : scale(1.05);
 }

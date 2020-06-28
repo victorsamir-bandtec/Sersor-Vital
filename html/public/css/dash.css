@@ -110,6 +110,7 @@ canvas {
 
 
 
+
 /* Estrutura */
 .estrutura {
   width : 100%;
@@ -209,6 +210,12 @@ canvas {
 }
 
 .alas ul li:hover {
+  transform: scale(1.05);
+
+  background: rgb(221, 37, 67);
+}
+
+.active{
   transform: scale(1.05);
 
   background: rgb(221, 37, 67);
