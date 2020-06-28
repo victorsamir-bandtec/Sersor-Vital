@@ -16,14 +16,13 @@
 		<nav class="menu">
 			<ul>
 				<li><a href="/principal.html">Home</a></li>
-				<li><a href="#">Configurações</a></li>
 				<li><a href="/suporte.html">Suporte</a></li>
 				<li><a href="/index.html">Sair</a></li>
 			</ul>
 		</nav>
 	</header>
 
-	
+
 
 	<main>
 		<div class="container">
@@ -43,12 +42,17 @@
 				</div>
 
 				<div class="temporeal">
-					<div class="temperatura">Temperatura: <span id="temperatura"></span> <div> <img src="img/termometro.png"
-						alt=""></div>  </div>
+					<div class="temperatura flex">
+						<p> Temperatura: <span id="temperatura"></span></p>
+						<div> <img class="img-termometro" src="img/termometro.png" alt=""></div>
+					</div>
 
-					<div class="umidade">Umidade: <span id="umidade"></span>  <div>
-						<img src="img/umidade.png" alt="">
-					</div>  </div>
+					<div class="umidade flex ">
+						<p> Umidade: <span id="umidade"></span></p>
+						<div>
+							<img src="img/umidade.png" alt="">
+						</div>
+					</div>
 				</div>
 
 
@@ -133,7 +137,7 @@
 					umidade.innerHTML = novoRegistro.umidade;
 
 
-					
+
 
 					setTimeout(atualizarGrafico, 5000);
 				});

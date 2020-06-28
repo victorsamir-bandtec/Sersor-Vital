@@ -16,7 +16,6 @@
     <nav class="menu">
       <ul>
         <li><a href="/principal.html">Home</a></li>
-        <li><a href="#">Configurações</a></li>
         <li><a href="/suporte.html">Suporte</a></li>
         <li><a href="/index.html">Sair</a></li>
       </ul>
@@ -24,48 +23,48 @@
   </header>
 
   <div class="notification" id="notification">
-		<div class="notification-item">
-			<div class="notification-icon"> <img src="img/atencao.png">
-			</div>
-			<div>
-				<h3>ATENÇÃO</h3>
-				<h5 >Algo de errado na temperatura e umidade da UTI</h5>
-			</div>
-		</div>
+    <div class="notification-item">
+      <div class="notification-icon"> <img src="img/atencao.png">
+      </div>
+      <div>
+        <h3>ATENÇÃO</h3>
+        <h5>Algo de errado na temperatura e umidade da UTI</h5>
+      </div>
+    </div>
   </div>
-  
+
   <div class="notification2" id="notification2">
-		<div class="notification2-item">
-			<div class="notification2-icon">  <img src="img/atencao.png">
-			</div>
-			<div>
-				<h3>ATENÇÃO</h3>
-				<h5 id="h5_mensagem">Algo de errado na temperatura e umidade da Sala cirúrgica</h5>
-			</div>
-		</div>
-	</div>
+    <div class="notification2-item">
+      <div class="notification2-icon"> <img src="img/atencao.png">
+      </div>
+      <div>
+        <h3>ATENÇÃO</h3>
+        <h5 id="h5_mensagem">Algo de errado na temperatura e umidade da Sala cirúrgica</h5>
+      </div>
+    </div>
+  </div>
 
   <div class="notification3" id="notification3">
-		<div class="notification3-item">
-			<div class="notification3-icon"> <img src="img/atencao.png">
-			</div>
-			<div>
-				<h3>ATENÇÃO</h3>
-				<h5 id="h5_mensagem">Algo de errado na temperatura e umidade do Hall</h5>
-			</div>
-		</div>
+    <div class="notification3-item">
+      <div class="notification3-icon"> <img src="img/atencao.png">
+      </div>
+      <div>
+        <h3>ATENÇÃO</h3>
+        <h5 id="h5_mensagem">Algo de errado na temperatura e umidade do Hall</h5>
+      </div>
+    </div>
   </div>
-  
+
   <div class="notification4" id="notification4">
-		<div class="notification4-item">
-			<div class="notification4-icon">  <img src="img/atencao.png">
-			</div>
-			<div>
-				<h3>ATENÇÃO</h3>
-				<h5>Algo de errado na temperatura e umidade do Consultório</h5>
-			</div>
-		</div>
-	</div>
+    <div class="notification4-item">
+      <div class="notification4-icon"> <img src="img/atencao.png">
+      </div>
+      <div>
+        <h3>ATENÇÃO</h3>
+        <h5>Algo de errado na temperatura e umidade do Consultório</h5>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -176,7 +175,7 @@
 <script>
 
   function atualizarGrafico() {
-    h5_mensagem.innerHTML='';
+    h5_mensagem.innerHTML = '';
     fetch('/leituras/tempo-real/1', { cache: 'no-store' }).then(function (response) {
       if (response.ok) {
         response.json().then(function (novoRegistro) {
@@ -186,11 +185,11 @@
           umidade1.innerHTML = novoRegistro.umidade;
 
           if (novoRegistro.temperatura > 27 || novoRegistro.temperatura < 20 || novoRegistro.umidade < 40 || novoRegistro.umidade > 80) {
-						notification.style.display = "block"
-					}
-					else {
-						notification.style.display = "none"
-					}
+            notification.style.display = "block"
+          }
+          else {
+            notification.style.display = "none"
+          }
 
 
           setTimeout(atualizarGrafico, 5000);
@@ -213,12 +212,12 @@
 
 
           if (novoRegistro.temperatura > 23 || novoRegistro.temperatura < 20 || novoRegistro.umidade < 30 || novoRegistro.umidade > 60) {
-						notification2.style.display = "block"
+            notification2.style.display = "block"
 
-					}
-					else {
-						notification2.style.display = "none"
-					}
+          }
+          else {
+            notification2.style.display = "none"
+          }
 
 
           setTimeout(atualizarGrafico, 5000);
@@ -240,11 +239,11 @@
           umidade3.innerHTML = novoRegistro.umidade;
 
           if (novoRegistro.temperatura > 26 || novoRegistro.temperatura < 23 || novoRegistro.umidade < 40) {
-						notification3.style.display = "block"
-					}
-					else {
-						notification3.style.display = "none"
-					}
+            notification3.style.display = "block"
+          }
+          else {
+            notification3.style.display = "none"
+          }
 
 
           setTimeout(atualizarGrafico, 5000);
@@ -266,12 +265,12 @@
           umidade4.innerHTML = novoRegistro.umidade;
 
           if (novoRegistro.temperatura > 26 || novoRegistro.temperatura < 23 || novoRegistro.umidade > 40) {
-						notification4.style.display = "block"
-            
-					}
-					else {
-						notification4.style.display = "none"
-					}
+            notification4.style.display = "block"
+
+          }
+          else {
+            notification4.style.display = "none"
+          }
 
 
           setTimeout(atualizarGrafico, 5000);

@@ -128,34 +128,52 @@ canvas {
 
 }
 
-.temporeal{
-  display: flex;
-  width: 550px;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 26px;
+.temporeal {
+  display        : flex;
+  width          : 650px;
+  margin         : -60px 0 0 40px;
+  font-weight    : bold;
+  font-size      : 26px;
   justify-content: space-between;
+
+  color: white;
 }
 
-.temporeal img{
-  width: 60px;
+.temporeal img {
+  width: 90px;
 }
 
-.temperatura{
-  height: 100px;
+.temporeal .temperatura img {
+  width: 33px;
+
+  margin-right: 3px;
+
+  /* background: #000; */
+}
+
+.temporeal .flex {
+  display: flex;
+
+  height   : 75px;
   min-width: 240px;
+
+  margin-left    : 25px;
+  padding        : 0 8px;
+  justify-content: center;
+  align-items    : center;
+  border-radius  : 5px;
+
+
+}
+
+
+.temperatura {
   background: #cf0000;
-  justify-content: center;
-  border-radius: 5px;
 
 }
 
-.umidade{
-  height: 100px;
-  min-width: 240px;
-  background: #049db5;
-  justify-content: center;
-  border-radius: 5px;
+.umidade {
+  background: #209db5;
 }
 
 
@@ -242,4 +260,3 @@ footer p {
   text-align: center;
   padding   : 30px;
 }
-
